@@ -24,14 +24,12 @@ I am a **passionate and driven professional** with expertise in:
 
 ## 🔗 Connect With Me
 
-- **LinkedIn**: [Your LinkedIn Profile](#)
-- **Portfolio**: [Your Website](#)
-- **Email**: your.email@example.com
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/lionel-schiepers-3a727a156/)
 
 ## 📥 Download My CV
 
 - 📄 [Download PDF](CV.pdf)
-- 🌐 [View Interactive Version](index.html)
+- 🌐 [View Interactive Version](https://lionelschiepers.github.io/CV/)
 
 ## 🛠️ Built With
 
