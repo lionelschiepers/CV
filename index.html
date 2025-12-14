@@ -148,7 +148,17 @@
         #main-header p {
             margin: 0;
             font-size: 1.1em;
-            color: #FFF; /* Changed to white */
+            color: var(--text-color); /* Use theme-aware text color */
+        }
+        
+        #main-header p a {
+            color: var(--text-color); /* Use theme-aware text color for links */
+            text-decoration: none; /* Remove underline for cleaner look */
+        }
+        
+        #main-header p a:hover {
+            color: var(--accent-color); /* Change to accent color on hover */
+            text-decoration: underline; /* Add underline on hover */
         }
 
         .section {
@@ -589,7 +599,52 @@
             <p>Proven track record of modernizing legacy systems, reducing operational costs, and accelerating development cycles. Eager to bring my strategic vision and technical leadership to your organization's most challenging projects.</p>
         </section>
 
-        <section id="experience" class="section">
+        
+
+        
+
+<section id="technologies" class="section">
+            <h2>Technologies</h2>
+            
+            <h3>Cloud & DevOps</h3>
+            <ul class="skills-list">
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5v-9l6 4.5-6 4.5z"/></svg><span>Azure</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Azure DevOps</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H6V4h8v16z"/></svg><span>Azure YAML Build Pipelines</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure Monitoring</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5v-9l6 4.5-6 4.5z"/></svg><span>Azure API Management</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>IaC (Terraform, Bicep)</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Kubernetes</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Grafana</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure Data Factory</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure DataBricks</span></div></li>
+            </ul>
+            
+            <h3>Programming & Scripting</h3>
+            <ul class="skills-list">
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>PowerShell / Bash</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>.NET / .NET Framework</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Node.js</span></div></li>
+            </ul>
+            
+            <h3>Infrastructure & Security</h3>
+            <ul class="skills-list">
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Windows / IIS</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Linux</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Containers</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Nginx</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>SQL Server</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>OAuth 2.0</span></div></li>
+            </ul>
+            
+            <h3>APIs & Development Tools</h3>
+            <ul class="skills-list">
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>API (REST, OpenAPI, Swagger, GraphQL)</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Code Quality (SonarQube)</span></div></li>
+            </ul>
+        </section>
+
+<section id="experience" class="section">
             <h2>Experience</h2>
             <div class="job">
                 <h3>Integration Architect & DevOps Engineer | May 2025 - Present</h3>
@@ -675,47 +730,6 @@
             </div>
         </section>
 
-        <section id="technologies" class="section">
-            <h2>Technologies</h2>
-            
-            <h3>Cloud & DevOps</h3>
-            <ul class="skills-list">
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5v-9l6 4.5-6 4.5z"/></svg><span>Azure</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Azure DevOps</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H6V4h8v16z"/></svg><span>Azure YAML Build Pipelines</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure Monitoring</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5v-9l6 4.5-6 4.5z"/></svg><span>Azure API Management</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>IaC (Terraform, Bicep)</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Kubernetes</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Grafana</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure Data Factory</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure DataBricks</span></div></li>
-            </ul>
-            
-            <h3>Programming & Scripting</h3>
-            <ul class="skills-list">
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>PowerShell / Bash</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>.NET / .NET Framework</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Node.js</span></div></li>
-            </ul>
-            
-            <h3>Infrastructure & Security</h3>
-            <ul class="skills-list">
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Windows / IIS</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Linux</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Containers</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Nginx</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>SQL Server</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>OAuth 2.0</span></div></li>
-            </ul>
-            
-            <h3>APIs & Development Tools</h3>
-            <ul class="skills-list">
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>API (REST, OpenAPI, Swagger, GraphQL)</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Code Quality (SonarQube)</span></div></li>
-            </ul>
-        </section>
-
         <section id="education" class="section">
             <h2>Education</h2>
             <p><strong>Bachelor in Computer Science | 1998</strong></p>
@@ -767,7 +781,7 @@
             <div class="contact-actions">
                 <a href="mailto:lionel_schiepers@hotmail.com" class="btn">Email Me Directly</a>
                 <a href="https://www.linkedin.com/in/lionel-schiepers-3a727a156/" target="_blank" class="btn">Connect on LinkedIn</a>
-                <a href="#" class="btn download-btn">Download CV (PDF)</a>
+                <a href="CV.pdf" class="btn download-btn" download>Download CV (PDF)</a>
             </div>
             
             <!-- Contact Form Setup Instructions:
@@ -776,7 +790,7 @@
                  3. Replace the placeholder in the JavaScript below with your actual Formspree URL
                  4. Uncomment the fetch() code and remove the setTimeout simulation
             -->
-            <form id="contactForm" class="contact-form">
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/mldqvozv" method="POST">
                 <h3>Or send me a message:</h3>
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -888,13 +902,13 @@
                 // Simulate API call (replace this with actual Formspree fetch call)
                 setTimeout(() => {
                     // This is a simulation - in production you would use:
-                    // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                    //     method: 'POST',
-                    //     body: JSON.stringify(formData),
-                    //     headers: {
-                    //         'Content-Type': 'application/json'
-                    //     }
-                    // })
+                    fetch('https://formspree.io/f/mldqvozv', {
+                         method: 'POST',
+                         body: JSON.stringify(formData),
+                         headers: {
+                             'Content-Type': 'application/json'
+                         }
+                    })
 
                     // For now, show success message
                     showFormStatus('success', 'Thank you for your message! I will get back to you soon.');
