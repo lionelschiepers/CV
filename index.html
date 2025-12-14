@@ -14,26 +14,20 @@
             --primary-color: #4A90E2; /* Blue */
             --secondary-color: #50E3C2; /* Teal */
             --accent-color: #F5A623; /* Orange */
-            --success-color: #2ECC71; /* Green */
-            --warning-color: #E74C3C; /* Red */
-            --info-color: #3498DB; /* Light Blue */
-            --gradient-primary: linear-gradient(135deg, #4A90E2 0%, #50E3C2 100%);
-            --gradient-secondary: linear-gradient(135deg, #F5A623 0%, #E74C3C 100%);
-            --gradient-success: linear-gradient(135deg, #2ECC71 0%, #27AE60 100%);
         }
         
         [data-theme="dark"] {
-            --bg-color: #121820; /* Even Darker Blue Gray */
-            --bg-secondary-color: #1E2A3A; /* Dark Blue Gray */
+            --bg-color: #1A252F; /* Even Darker Blue Gray */
+            --bg-secondary-color: #2C3E50; /* Dark Blue Gray */
             --text-color: #ECF0F1; /* Light Gray */
             --text-secondary-color: #BDC3C7;
             --border-color: #4A90E2;
         }
 
         [data-theme="light"] {
-            --bg-color: #F8F9FA; /* Light Gray */
+            --bg-color: #ECF0F1; /* Light Gray */
             --bg-secondary-color: #FFFFFF;
-            --text-color: #2C3E50; /* Darker Gray */
+            --text-color: #34495E; /* Darker Gray */
             --text-secondary-color: #7F8C8D;
             --border-color: #F5A623;
         }
@@ -50,11 +44,6 @@
             transition: background 0.3s ease, color 0.3s ease;
         }
 
-        [data-theme="dark"] body {
-            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
-            background-size: 20px 20px;
-        }
-
         .container {
             max-width: 960px;
             margin: 0 auto;
@@ -62,16 +51,13 @@
         }
 
         #main-header {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 50px 20px;
+            background: var(--bg-secondary-color);
+            color: var(--text-color);
+            padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
             position: relative;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 1000px;
         }
         
         .header-top {
@@ -89,17 +75,12 @@
         }
 
         .social-links a {
-            color: white;
-            transition: all 0.3s ease;
-            padding: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            transition: color 0.3s ease;
         }
 
         .social-links a:hover {
             color: var(--accent-color);
-            transform: scale(1.2);
-            background: rgba(255, 255, 255, 0.2);
         }
 
         .theme-switcher {
@@ -137,7 +118,6 @@
             background-color: white;
             transition: .4s;
             border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .theme-switch-checkbox:checked + .theme-switch-label {
@@ -148,72 +128,71 @@
             transform: translateX(26px);
         }
 
-        .theme-switcher {
-            background: white;
-            padding: 5px;
-            border-radius: 40px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
         .profile-picture {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             background-color: var(--secondary-color); /* Placeholder color */
-            margin: 0 auto 25px auto;
+            margin: 0 auto 20px auto;
             display: block;
             object-fit: cover; /* Ensures image covers the area nicely */
-            border: 6px solid white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            border: 5px solid var(--primary-color);
             position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
         .profile-picture:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-            border-width: 8px;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px 5px rgba(74, 144, 226, 0.5);
+            z-index: 1001;
         }
 
-        .profile-glow {
+        .fireworks-container {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            z-index: 1000;
+            overflow: hidden;
         }
 
-        .profile-picture:hover + .profile-glow {
-            opacity: 1;
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px 2px currentColor;
+            opacity: 0;
+        }
+
+        .firework-explosion {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px 2px currentColor;
         }
 
         #main-header h1 {
-            margin: 0 0 15px 0;
-            font-size: 3.5em;
+            margin: 0 0 10px 0;
+            font-size: 3em;
             font-weight: 600;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            letter-spacing: 1px;
         }
 
         #main-header p {
             margin: 0;
-            font-size: 1.2em;
-            color: rgba(255, 255, 255, 0.95);
-            font-weight: 400;
-        }
-
-        #main-header .subtitle {
             font-size: 1.1em;
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.85);
-            margin-top: 10px;
-            font-weight: 300;
+            color: var(--text-color); /* Use theme-aware text color */
         }
         
         #main-header p a {
@@ -229,30 +208,17 @@
         .section {
             background: var(--bg-secondary-color);
             margin-bottom: 40px;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             opacity: 0;
             transform: translateX(-100%);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            border-left: 5px solid var(--primary-color);
         }
 
         .section.is-visible {
             opacity: 1;
             transform: translateX(0);
-        }
-
-        .section:nth-child(even) {
-            border-left-color: var(--secondary-color);
-        }
-
-        .section:nth-child(3n) {
-            border-left-color: var(--accent-color);
-        }
-
-        .section:nth-child(4n) {
-            border-left-color: var(--success-color);
         }
         
         .section h3 {
@@ -266,55 +232,25 @@
 
         .section h2 {
             color: var(--primary-color);
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            font-size: 2.2em;
-            font-weight: 600;
-            display: inline-block;
             border-bottom: 3px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: 600;
         }
 
         .job {
             margin-bottom: 30px;
-            padding-bottom: 25px;
-            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--bg-color);
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            position: relative;
-            padding-left: 20px;
         }
 
         .job.is-visible {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        .job::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .job:nth-child(even)::before {
-            background: var(--secondary-color);
-        }
-
-        .job:nth-child(3n)::before {
-            background: var(--accent-color);
-        }
-
-        .job:nth-child(4n)::before {
-            background: var(--success-color);
         }
 
         .job:last-of-type {
@@ -391,48 +327,6 @@
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
         }
 
-        /* Enhanced skills grid layout */
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .skills-list li {
-            padding: 12px 18px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .skills-list li a {
-            font-weight: 500;
-        }
-
-        .skills-list li svg {
-            width: 18px;
-            height: 18px;
-            color: var(--primary-color);
-        }
-
-        .skills-list li:hover {
-            background: var(--gradient-primary);
-            color: white;
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-            border-color: transparent;
-        }
-
-        .skills-list li:hover svg {
-            color: white;
-        }
-
-        .skills-list li:hover a {
-            color: white;
-        }
-
         #certifications p a {
             color: var(--text-color);
             text-decoration: none;
@@ -486,11 +380,11 @@
         }
 
         .btn {
-            background: var(--gradient-primary);
+            background: var(--primary-color);
             color: #fff;
-            padding: 15px 25px;
+            padding: 15px 20px;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             cursor: pointer;
             font-size: 1.1em;
             font-weight: 600;
@@ -500,27 +394,19 @@
             display: inline-block;
             margin-right: 10px;
             margin-bottom: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            border: 2px solid transparent;
         }
 
         .btn:hover {
-            background: var(--gradient-secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            border-color: white;
+            background: var(--accent-color);
+            transform: translateY(-2px);
         }
         
         .download-btn {
-            background: var(--gradient-success);
+            background: var(--secondary-color);
         }
         
         .download-btn:hover {
-            background: var(--gradient-secondary);
-        }
-        
-        .btn:active {
-            transform: translateY(0);
+            background: var(--accent-color);
         }
         
         .contact-actions {
@@ -538,29 +424,8 @@
         
         .project {
             margin-bottom: 30px;
-            padding-bottom: 25px;
+            padding-bottom: 20px;
             border-bottom: 1px dashed var(--border-color);
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .project::before {
-            content: "🚀";
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 1.2em;
-            color: var(--accent-color);
-        }
-
-        .project h3 {
-            color: var(--text-color);
-            margin: 0 0 10px 0;
-            font-size: 1.3em;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         
         .project h3 {
@@ -764,11 +629,9 @@
                 </div>
             </div>
             <img src="Badge.jpg" alt="Profile Picture" class="profile-picture">
-            <div class="profile-glow"></div>
             <h1>Lionel Schiepers</h1>
             <p>+32 (0)478 55 14 39 | <a href="mailto:lionel_schiepers@hotmail.com">lionel_schiepers@hotmail.com</a> | Brussels</p>
-            <p class="subtitle">Cloud-Native Architect & DevOps Engineer | Azure Specialist | Automation Expert</p>
-            <br />
+            <br /> <br/>
             <p><a href="#contact" class="btn">Get in Touch</a></p>
         </div>
     </header>
@@ -1056,6 +919,139 @@
                     observer.observe(section);
 
                 });
+
+        // Fireworks animation for profile picture
+        const profilePicture = document.querySelector('.profile-picture');
+        const fireworksContainer = document.createElement('div');
+        fireworksContainer.className = 'fireworks-container';
+        profilePicture.parentNode.insertBefore(fireworksContainer, profilePicture.nextSibling);
+
+        // Create fireworks on hover
+        profilePicture.addEventListener('mouseenter', function() {
+            createFireworks(profilePicture);
+        });
+
+        function createFireworks(targetElement) {
+            const rect = targetElement.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Create multiple fireworks
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createFirework(centerX, centerY);
+                }, i * 200);
+            }
+        }
+
+        function createFirework(startX, startY) {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33F3', '#33FFF3', '#FF8C42', '#8A2BE2', '#FF69B4', '#00FFFF'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+
+            // Create firework launch
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.color = color;
+            firework.style.left = startX + 'px';
+            firework.style.top = startY + 'px';
+            firework.style.width = '6px';
+            firework.style.height = '6px';
+            firework.style.boxShadow = '0 0 8px 3px ' + color;
+            fireworksContainer.appendChild(firework);
+
+            // Animate firework launch
+            const launchHeight = -120 - Math.random() * 80;
+            const duration = 800 + Math.random() * 400;
+
+            firework.animate([
+                { transform: 'translate(0, 0)', opacity: 1 },
+                { transform: 'translate(0, ' + launchHeight + 'px)', opacity: 0 }
+            ], {
+                duration: duration,
+                easing: 'cubic-bezier(0.4, 0, 0.6, 1)'
+            });
+
+            // Create explosion at the end of launch
+            setTimeout(() => {
+                createExplosion(startX, startY + launchHeight, color);
+                firework.remove();
+            }, duration);
+        }
+
+        function createExplosion(x, y, color) {
+            const explosion = document.createElement('div');
+            explosion.className = 'firework-explosion';
+            explosion.style.left = '0';
+            explosion.style.top = '0';
+            fireworksContainer.appendChild(explosion);
+
+            const particleCount = 80 + Math.floor(Math.random() * 40);
+            const particles = [];
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Use a gradient of colors for more visual appeal
+                const hueVariation = Math.floor(Math.random() * 30) - 15;
+                const particleColor = adjustColorHue(color, hueVariation);
+                particle.style.color = particleColor;
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                
+                // Random size for particles
+                const size = 3 + Math.random() * 4;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.boxShadow = '0 0 6px 2px ' + particleColor;
+                
+                explosion.appendChild(particle);
+                particles.push(particle);
+
+                // Random angle and velocity
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = 3 + Math.random() * 4;
+
+                const endX = x + Math.cos(angle) * velocity * 60;
+                const endY = y + Math.sin(angle) * velocity * 60;
+
+                particle.animate([
+                    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                    { transform: 'translate(' + (endX - x) + 'px, ' + (endY - y) + 'px) scale(0)', opacity: 0 }
+                ], {
+                    duration: 1200 + Math.random() * 600,
+                    easing: 'cubic-bezier(0.4, 0, 0.6, 1)'
+                });
+            }
+
+            // Remove explosion after animation
+            setTimeout(() => {
+                explosion.remove();
+            }, 1800);
+        }
+
+        // Helper function to adjust color hue
+        function adjustColorHue(color, degrees) {
+            // Simple color adjustment - in a real implementation, you'd convert to HSL, adjust hue, then back to hex
+            // For this demo, we'll just return the original color or a related one
+            const colorMap = {
+                '#FF5733': ['#FF6B47', '#FF8C69', '#FF471A'],
+                '#33FF57': ['#47FF6B', '#69FF8C', '#1AFF47'],
+                '#3357FF': ['#4769FF', '#698CFF', '#1A47FF'],
+                '#F3FF33': ['#F4FF47', '#F6FF69', '#F1FF1A'],
+                '#FF33F3': ['#FF47F4', '#FF69F6', '#FF1AF1'],
+                '#33FFF3': ['#47FFF4', '#69FFF6', '#1AFFF1'],
+                '#FF8C42': ['#FF9C52', '#FFBC72', '#FF7C22'],
+                '#8A2BE2': ['#9A3BE3', '#BA5BE5', '#7A1BE0'],
+                '#FF69B4': ['#FF79C4', '#FF99D4', '#FF59A4'],
+                '#00FFFF': ['#1AFFFF', '#3AFFFF', '#00E5E5']
+            };
+            
+            if (colorMap[color] && colorMap[color][Math.abs(degrees) % 3]) {
+                return colorMap[color][Math.abs(degrees) % 3];
+            }
+            return color;
+        }
 
         // Contact form handling
         const contactForm = document.getElementById('contactForm');
