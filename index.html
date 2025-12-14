@@ -137,6 +137,50 @@
             display: block;
             object-fit: cover; /* Ensures image covers the area nicely */
             border: 5px solid var(--primary-color);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px 5px rgba(74, 144, 226, 0.5);
+            z-index: 1001;
+        }
+
+        .fireworks-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px 2px currentColor;
+            opacity: 0;
+        }
+
+        .firework-explosion {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px 2px currentColor;
         }
 
         #main-header h1 {
@@ -875,6 +919,139 @@
                     observer.observe(section);
 
                 });
+
+        // Fireworks animation for profile picture
+        const profilePicture = document.querySelector('.profile-picture');
+        const fireworksContainer = document.createElement('div');
+        fireworksContainer.className = 'fireworks-container';
+        profilePicture.parentNode.insertBefore(fireworksContainer, profilePicture.nextSibling);
+
+        // Create fireworks on hover
+        profilePicture.addEventListener('mouseenter', function() {
+            createFireworks(profilePicture);
+        });
+
+        function createFireworks(targetElement) {
+            const rect = targetElement.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Create multiple fireworks
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createFirework(centerX, centerY);
+                }, i * 200);
+            }
+        }
+
+        function createFirework(startX, startY) {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33F3', '#33FFF3', '#FF8C42', '#8A2BE2', '#FF69B4', '#00FFFF'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+
+            // Create firework launch
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.color = color;
+            firework.style.left = startX + 'px';
+            firework.style.top = startY + 'px';
+            firework.style.width = '6px';
+            firework.style.height = '6px';
+            firework.style.boxShadow = '0 0 8px 3px ' + color;
+            fireworksContainer.appendChild(firework);
+
+            // Animate firework launch
+            const launchHeight = -120 - Math.random() * 80;
+            const duration = 800 + Math.random() * 400;
+
+            firework.animate([
+                { transform: 'translate(0, 0)', opacity: 1 },
+                { transform: 'translate(0, ' + launchHeight + 'px)', opacity: 0 }
+            ], {
+                duration: duration,
+                easing: 'cubic-bezier(0.4, 0, 0.6, 1)'
+            });
+
+            // Create explosion at the end of launch
+            setTimeout(() => {
+                createExplosion(startX, startY + launchHeight, color);
+                firework.remove();
+            }, duration);
+        }
+
+        function createExplosion(x, y, color) {
+            const explosion = document.createElement('div');
+            explosion.className = 'firework-explosion';
+            explosion.style.left = '0';
+            explosion.style.top = '0';
+            fireworksContainer.appendChild(explosion);
+
+            const particleCount = 80 + Math.floor(Math.random() * 40);
+            const particles = [];
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Use a gradient of colors for more visual appeal
+                const hueVariation = Math.floor(Math.random() * 30) - 15;
+                const particleColor = adjustColorHue(color, hueVariation);
+                particle.style.color = particleColor;
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                
+                // Random size for particles
+                const size = 3 + Math.random() * 4;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.boxShadow = '0 0 6px 2px ' + particleColor;
+                
+                explosion.appendChild(particle);
+                particles.push(particle);
+
+                // Random angle and velocity
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = 3 + Math.random() * 4;
+
+                const endX = x + Math.cos(angle) * velocity * 60;
+                const endY = y + Math.sin(angle) * velocity * 60;
+
+                particle.animate([
+                    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                    { transform: 'translate(' + (endX - x) + 'px, ' + (endY - y) + 'px) scale(0)', opacity: 0 }
+                ], {
+                    duration: 1200 + Math.random() * 600,
+                    easing: 'cubic-bezier(0.4, 0, 0.6, 1)'
+                });
+            }
+
+            // Remove explosion after animation
+            setTimeout(() => {
+                explosion.remove();
+            }, 1800);
+        }
+
+        // Helper function to adjust color hue
+        function adjustColorHue(color, degrees) {
+            // Simple color adjustment - in a real implementation, you'd convert to HSL, adjust hue, then back to hex
+            // For this demo, we'll just return the original color or a related one
+            const colorMap = {
+                '#FF5733': ['#FF6B47', '#FF8C69', '#FF471A'],
+                '#33FF57': ['#47FF6B', '#69FF8C', '#1AFF47'],
+                '#3357FF': ['#4769FF', '#698CFF', '#1A47FF'],
+                '#F3FF33': ['#F4FF47', '#F6FF69', '#F1FF1A'],
+                '#FF33F3': ['#FF47F4', '#FF69F6', '#FF1AF1'],
+                '#33FFF3': ['#47FFF4', '#69FFF6', '#1AFFF1'],
+                '#FF8C42': ['#FF9C52', '#FFBC72', '#FF7C22'],
+                '#8A2BE2': ['#9A3BE3', '#BA5BE5', '#7A1BE0'],
+                '#FF69B4': ['#FF79C4', '#FF99D4', '#FF59A4'],
+                '#00FFFF': ['#1AFFFF', '#3AFFFF', '#00E5E5']
+            };
+            
+            if (colorMap[color] && colorMap[color][Math.abs(degrees) % 3]) {
+                return colorMap[color][Math.abs(degrees) % 3];
+            }
+            return color;
+        }
 
         // Contact form handling
         const contactForm = document.getElementById('contactForm');
