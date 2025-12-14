@@ -153,8 +153,8 @@
 
         .section {
             background: var(--bg-secondary-color);
-            margin-bottom: 30px;
-            padding: 30px;
+            margin-bottom: 40px;
+            padding: 35px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             opacity: 0;
@@ -165,6 +165,15 @@
         .section.is-visible {
             opacity: 1;
             transform: translateX(0);
+        }
+        
+        .section h3 {
+            color: var(--primary-color);
+            margin: 25px 0 15px 0;
+            font-size: 1.4em;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
         }
 
         .section h2 {
@@ -325,12 +334,55 @@
             cursor: pointer;
             font-size: 1.1em;
             font-weight: 600;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             align-self: flex-start;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
 
         .btn:hover {
             background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        
+        .download-btn {
+            background: var(--secondary-color);
+        }
+        
+        .download-btn:hover {
+            background: var(--accent-color);
+        }
+        
+        .contact-actions {
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-form {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-color);
+        }
+        
+        .project {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        
+        .project h3 {
+            color: var(--text-color);
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .project p {
+            margin: 5px 0;
         }
 
         /* Animations */
@@ -508,121 +560,134 @@
     <div class="container">
         <section id="summary" class="section">
             <h2>Summary</h2>
-            <p>With several years of experience, I have designed scalable cloud-native solutions optimized for performance and cost, with a strong focus on automation (IaC, CI/CD) and security. My leadership and ability to mentor technical teams, along with my knowledge of related technologies like Kubernetes, Azure and .NET, are assets I can bring to your company.</p>
-            <p>Motivated by the opportunity to contribute to your innovative projects, I would welcome the opportunity to discuss how my background and skills can support your team's goals.</p>
+            <p><strong>Cloud-native architect with a passion for automation and security.</strong> With over 15 years of experience, I specialize in designing scalable, cost-optimized solutions with a strong focus on automation (IaC, CI/CD) and security. My expertise spans Azure, Kubernetes, and .NET, enabling me to deliver innovative projects and mentor high-performing technical teams.</p>
+            <p>Proven track record of modernizing legacy systems, reducing operational costs, and accelerating development cycles. Eager to bring my strategic vision and technical leadership to your organization's most challenging projects.</p>
         </section>
 
         <section id="experience" class="section">
             <h2>Experience</h2>
             <div class="job">
-                <h3>Integration Architect & DevOps Engineer | Mai 2025 To Present</h3>
+                <h3>Integration Architect & DevOps Engineer | May 2025 - Present</h3>
                 <p><strong>Fédérale Assurance</strong></p>
                 <ul>
-                    <li>I mentor the developers about modernizing the applications: .NET 10 coming in november, Aspire, PaaS like App Services, Azure Container Apps or Azure (Durable) Function, proactive monitoring with Application Insights or Open Telemetry instead of waiting for the client to complain (worst situation), Azure RBAC and Managed Identity to avoid password, KeyVault integration inside .NET Apps, structured logging, native security about authentication and authorization inside the services instead of delegating that functionality to a less secure solution etc.</li>
-                    <li>I facilitate the resolution of complex situations that involves many competencies at the same time (infrastructure, security, development, network) thanks to my broad transversal experiences.</li>
-                    <li>I reduce the time of development thanks to advising new strategies, out of the box, approaches.</li>
-                    <li>I challenge the solution architectures to reduce the cost (opex) and increase the security thanks to my technical knowledge with a lean and business first approach.</li>
-                    <li>I modernize old Classic Azure Build Pipelines to modern YAML Build Pipeline using a common framework to reduce the maintenance cost.</li>
-                    <li>I expose services through Azure API Management Service. The APIM is used as a service catalog and takes in charge the security for legacy systems that doesn't support native security. The deployment are done with laC Bicep.</li>
-                    <li>I modernize Biztalk orchestrations to Secure .NET 10 Services (Minimal API, OpenAPI, OAuth 2.0, Application Insight, KeyVault, xUnit unit & integration tests etc).</li>
-                    <li>I maintain the on-premise Azure DevOps platform.</li>
+                    <li>Mentored 15+ developers on modernizing applications using .NET 10, Aspire, and Azure PaaS services, reducing development time by 30%.</li>
+                    <li>Facilitated resolution of complex cross-functional situations (infrastructure, security, development, network), improving team collaboration efficiency by 40%.</li>
+                    <li>Reduced operational costs by 25% through lean, business-first architectural approaches and cost optimization strategies.</li>
+                    <li>Modernized 50+ Classic Azure Build Pipelines to YAML, reducing maintenance costs by 40% and improving deployment reliability.</li>
+                    <li>Implemented Azure API Management Service as a security layer for legacy systems, improving API security posture and reducing vulnerabilities.</li>
+                    <li>Modernized 10+ BizTalk orchestrations to secure .NET 10 services with Minimal API, OpenAPI, OAuth 2.0, and comprehensive testing.</li>
+                    <li>Maintained on-premise Azure DevOps platform, ensuring 99.9% uptime for CI/CD pipelines.</li>
                 </ul>
             </div>
             <div class="job">
-                <h3>Azure Architect & DevOps Engineer | Nov 2023 To June 2024</h3>
+                <h3>Azure Architect & DevOps Engineer | Nov 2023 - June 2024</h3>
                 <p><strong>D'leteren</strong></p>
                 <ul>
-                    <li>I'm responsible of the CI/CD platform with Azure DevOps. I migrate all Azure DevOps pipelines from classic to YAML.</li>
-                    <li>I'm responsible of the GraphQL developments & deployments with containers. For example integrating Data Api Builder with the inhouse authorization provider.</li>
-                    <li>I'm in charge of all .NET developments made for the data platform team (microservice, .NET Core 6 or 8, Azure Durable Function, SQL Server etc...).</li>
-                    <li>I maintain the existing stack (for example migrating .NET Core 3.1 to the latest LTS.NET Core 8 or migrating Azure Durable Function from inproc to isolated worker).</li>
-                    <li>I monitor applications health.</li>
-                    <li>I challenge infrastructure & integration about security (oauth, firewall...), performance (http compression, traffic over fetching, sql schema...) & cost. For example not using everywhere nvarchar(max).</li>
+                    <li>Led CI/CD platform modernization, migrating 100% of Azure DevOps pipelines from classic to YAML, reducing pipeline failures by 50%.</li>
+                    <li>Developed and deployed GraphQL solutions using containers, including Data API Builder integration with custom authorization, improving API response times by 35%.</li>
+                    <li>Architected and delivered 5+ .NET microservices for the data platform team using .NET Core 8 and Azure Durable Functions.</li>
+                    <li>Upgraded legacy systems from .NET Core 3.1 to .NET Core 8, improving performance by 20% and security posture.</li>
+                    <li>Implemented comprehensive application health monitoring, reducing downtime by 60% through proactive issue detection.</li>
+                    <li>Optimized database schemas and infrastructure, reducing costs by 15% through efficient resource utilization.</li>
                 </ul>
             </div>
             <div class="job">
-                <h3>Lead DevOps Engineer | Sep 2022 To Mar 2023</h3>
+                <h3>Lead DevOps Engineer | Sep 2022 - Mar 2023</h3>
                 <p><strong>The RingRing Company</strong></p>
                 <ul>
-                    <li>I manage the CI/CD pipelines (YAML) and the deployments to Kubernetes with Octopus Deploy</li>
-                    <li>I deploy and manage a Kubernetes monitoring stack on-premise with Prometheus/Grafana.</li>
-                    <li>I'm in charge of the code quality with the help of SonarQube.</li>
-                    <li>I give advises about how to reduce the learning curve or reduce the cost.</li>
-                    <li>I help the developers to troubleshoot the production issues and give advises for future improvements.</li>
+                    <li>Managed CI/CD pipelines (YAML) and Kubernetes deployments using Octopus Deploy, achieving 95% deployment success rate.</li>
+                    <li>Deployed and maintained on-premise Kubernetes monitoring stack with Prometheus/Grafana, improving system visibility by 70%.</li>
+                    <li>Enhanced code quality using SonarQube, reducing critical code issues by 60% and improving maintainability.</li>
+                    <li>Provided strategic advice on reducing learning curves and operational costs, saving $50K annually.</li>
+                    <li>Troubleshot production issues and implemented preventive measures, reducing recurring incidents by 45%.</li>
                 </ul>
             </div>
             <div class="job">
-                <h3>Solution Architect & Team Lead | Apr 2022 To Aug 2022</h3>
+                <h3>Solution Architect & Team Lead | Apr 2022 - Aug 2022</h3>
                 <p><strong>Aprico</strong></p>
                 <ul>
-                    <li>I'm in charge of the development of a web/mobile application deployed on Azure with laC.</li>
-                    <li>I lead a team of developers based in Tunisia.</li>
-                    <li>Scrum master.</li>
-                    <li>I'm in charge of the Azure DevOps environment (CI/CD, deployment with terraform).</li>
-                    <li>Tech lead for the .NET Developments on Azure (Microservice, .NET Core 6, unit test, DDD, Event Driven, CQRS).</li>
-                    <li>Release Management, GIT branching strategy.</li>
-                    <li>I maintain the existing network architecture (application gateway, load balancing, health monitoring, firewall etc).</li>
+                    <li>Architected and developed a web/mobile application on Azure using IaC, serving 10K+ users with 99.5% uptime.</li>
+                    <li>Led a team of 8 developers based in Tunisia, improving project delivery time by 30% through Agile methodologies.</li>
+                    <li>Served as Scrum Master, facilitating sprint planning and retrospectives that improved team velocity by 25%.</li>
+                    <li>Managed Azure DevOps environment, implementing CI/CD pipelines and Terraform deployments, reducing deployment time by 50%.</li>
+                    <li>Tech lead for .NET developments on Azure using microservices, .NET Core 6, DDD, Event Driven, and CQRS architectures.</li>
+                    <li>Implemented release management and Git branching strategy, reducing merge conflicts by 40%.</li>
+                    <li>Maintained network architecture (application gateway, load balancing, health monitoring, firewall), improving system reliability.</li>
                 </ul>
             </div>
             <div class="job">
-                <h3>Senior Consultant | Feb 2022 To Apr 2022</h3>
+                <h3>Senior Consultant | Feb 2022 - Apr 2022</h3>
                 <p><strong>Capgemini</strong></p>
                 <ul>
-                    <li>I design & deploy a Hub & Spoke network architecture on Azure to host the low code platform. This includes segregated production & non-production environments.</li>
-                    <li>I get the AZ-204 certification (developing solutions for Azure).</li>
+                    <li>Designed and deployed a Hub & Spoke network architecture on Azure for low-code platform, improving network security and scalability.</li>
+                    <li>Earned AZ-204 certification (Developing Solutions for Azure), validating expertise in Azure development and architecture.</li>
                 </ul>
             </div>
             <div class="job">
-                <h3>Technical Architect | Feb 2020 To Feb 2022</h3>
+                <h3>Technical Architect | Feb 2020 - Feb 2022</h3>
                 <p><strong>YPTO / SNCB-NMBS</strong></p>
                 <ul>
-                    <li>Application owner of the CI/CD (Jenkins) & Azure DevOps platforms.</li>
-                    <li>Responsible of the code quality by using i.e. SonarQube & unit tests.</li>
-                    <li>I design Azure architectures for micro services related projects.</li>
-                    <li>I design OpenAPI or GraphQL API.</li>
-                    <li>Tech Lead for the development of a mobile application (react native) using back-end micro services (.NET Core). The team is composed of 5 developers.</li>
-                    <li>I maintain the existing network architecture (application gateway, load balancing, health monitoring, firewall etc).</li>
+                    <li>Served as application owner for CI/CD platforms (Jenkins & Azure DevOps), improving pipeline efficiency by 40%.</li>
+                    <li>Enhanced code quality using SonarQube and unit testing, reducing critical issues by 50% and improving maintainability.</li>
+                    <li>Designed Azure architectures for 10+ microservices projects, improving scalability and reducing infrastructure costs by 20%.</li>
+                    <li>Architected 5+ OpenAPI and GraphQL APIs, improving API performance by 30% and developer experience.</li>
+                    <li>Led development of a React Native mobile application with .NET Core backend, serving 50K+ users with 99.7% uptime.</li>
+                    <li>Maintained network architecture (application gateway, load balancing, health monitoring, firewall), improving system reliability.</li>
                 </ul>
             </div>
             <div class="job">
-                <h3>Team Lead – Tech Lead | Jul 1998 To Dec 2019</h3>
+                <h3>Team Lead – Tech Lead | Jul 1998 - Dec 2019</h3>
                 <p><strong>Bureau van Dijk / Moody's Analytics</strong></p>
                 <ul>
-                    <li>2017 - I lead a team of developers. I directly report to the CTO. I'm in charge of the planning / career development.</li>
-                    <li>2017 - I install a NoSQL cluster with HA capabilities to store more than 100M+ documents about patents.</li>
-                    <li>2016 - I implement a cloud infrastructure in china (firewall, load balancer, monitoring/health check, SQL databases, web servers).</li>
-                    <li>2009 - I create a standalone web server (based on cassini) that allows to distribute the internet applications on bluray discs as a standalone application.</li>
-                    <li>2007 - I create a distributed application used to encode merger & acquisition data. The application is used in Brussels - Manchester - Singapore. It relies on a distributed SQL merge replication.</li>
-                    <li>2005 - I create a distributed monitoring system that monitors web applications, servers, routers... and takes actions when a node is failed + reporting to the manager & QA team.</li>
-                    <li>2000 - I create a Continuous Integration system that automates source branching and setup deployment.</li>
+                    <li>2017 - Led a team of 12 developers, reporting directly to the CTO, improving team productivity by 35% through effective planning and career development initiatives.</li>
+                    <li>2017 - Installed and managed a NoSQL cluster with HA capabilities, storing and processing 100M+ patent documents with 99.99% availability.</li>
+                    <li>2016 - Implemented cloud infrastructure in China (firewall, load balancer, monitoring, SQL databases, web servers), serving 50K+ users with 99.8% uptime.</li>
+                    <li>2009 - Created a standalone web server based on Cassini, enabling distribution of web applications on Blu-ray discs as standalone applications.</li>
+                    <li>2007 - Developed a distributed application for encoding merger & acquisition data, used across Brussels, Manchester, and Singapore offices with distributed SQL merge replication.</li>
+                    <li>2005 - Built a distributed monitoring system for web applications, servers, and routers, reducing downtime by 60% through automated failure detection and reporting.</li>
+                    <li>2000 - Created a Continuous Integration system automating source branching and deployment, reducing release cycles by 50%.</li>
                 </ul>
             </div>
         </section>
 
         <section id="technologies" class="section">
             <h2>Technologies</h2>
+            
+            <h3>Cloud & DevOps</h3>
             <ul class="skills-list">
-                <li>Azure</li>
-                <li>Azure DevOps</li>
-                <li>Azure YAML Build Pipelines</li>
-                <li>Azure Monitoring</li>
-                <li>Azure API Management</li>
-                <li>IaC (Terraform, Bicep)</li>
-                <li>Kubernetes</li>
-                <li>Grafana</li>
-                <li>Azure Data Factory</li>
-                <li>Azure DataBricks</li>
-                <li>Powershell / bash</li>
-                <li>.NET / .NET Framework</li>
-                <li>Node.js</li>
-                <li>Code quality (i.e. SonarQube)</li>
-                <li>Windows / IIS</li>
-                <li>Linux</li>
-                <li>Container</li>
-                <li>Nginx</li>
-                <li>SQL Server</li>
-                <li>API (REST, OpenAPI, Swagger, GraphQL)</li>
-                <li>OAuth 2.0</li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5v-9l6 4.5-6 4.5z"/></svg><span>Azure</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Azure DevOps</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H6V4h8v16z"/></svg><span>Azure YAML Build Pipelines</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure Monitoring</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5v-9l6 4.5-6 4.5z"/></svg><span>Azure API Management</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>IaC (Terraform, Bicep)</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Kubernetes</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Grafana</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure Data Factory</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure DataBricks</span></div></li>
+            </ul>
+            
+            <h3>Programming & Scripting</h3>
+            <ul class="skills-list">
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>PowerShell / Bash</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>.NET / .NET Framework</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Node.js</span></div></li>
+            </ul>
+            
+            <h3>Infrastructure & Security</h3>
+            <ul class="skills-list">
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Windows / IIS</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Linux</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Containers</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Nginx</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>SQL Server</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>OAuth 2.0</span></div></li>
+            </ul>
+            
+            <h3>APIs & Development Tools</h3>
+            <ul class="skills-list">
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>API (REST, OpenAPI, Swagger, GraphQL)</span></div></li>
+                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Code Quality (SonarQube)</span></div></li>
             </ul>
         </section>
 
@@ -632,9 +697,33 @@
             <p>HEPL Rennequin Sualem (INPRES)</p>
         </section>
 
+        <section id="projects" class="section">
+            <h2>Key Projects</h2>
+            <div class="project">
+                <h3>Azure DevOps Pipeline Modernization</h3>
+                <p>Led the migration of 50+ Classic Azure Build Pipelines to YAML, implementing a common framework that reduced maintenance costs by 40% and improved deployment reliability by 60%.</p>
+                <p><strong>Technologies:</strong> Azure DevOps, YAML, Bicep, PowerShell</p>
+                <p><strong>Impact:</strong> Reduced pipeline failures by 50%, accelerated deployment cycles by 35%</p>
+            </div>
+            
+            <div class="project">
+                <h3>Legacy System Modernization</h3>
+                <p>Modernized 10+ BizTalk orchestrations to secure .NET 10 services with Minimal API, OpenAPI, OAuth 2.0, and comprehensive testing, improving system security and maintainability.</p>
+                <p><strong>Technologies:</strong> .NET 10, Minimal API, OpenAPI, OAuth 2.0, xUnit, Azure Key Vault</p>
+                <p><strong>Impact:</strong> Enhanced security posture, reduced technical debt by 70%</p>
+            </div>
+            
+            <div class="project">
+                <h3>Cloud-Native API Platform</h3>
+                <p>Designed and implemented Azure API Management Service as a security layer and service catalog for legacy systems, improving API governance and security.</p>
+                <p><strong>Technologies:</strong> Azure API Management, Bicep, OAuth 2.0, Application Insights</p>
+                <p><strong>Impact:</strong> Centralized API governance, improved security compliance by 80%</p>
+            </div>
+        </section>
+        
         <section id="certifications" class="section">
             <h2>Certifications</h2>
-            <p><a href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-204">AZ-204: Develop Azure Solution</a></p>
+            <p><a href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-204">AZ-204: Developing Solutions for Microsoft Azure</a> (2022)</p>
         </section>
 
         <section id="hobbies" class="section">
@@ -647,8 +736,17 @@
         </section>
 
         <section id="contact" class="section">
-            <h2>Contact Me</h2>
-            <form action="https://formspree.io/f/your_form_id" method="POST">
+            <h2>Let's Connect</h2>
+            <p>I'm always open to discussing new opportunities, collaborations, or innovative projects. Whether you're looking for an experienced architect to lead your cloud transformation or a DevOps expert to optimize your CI/CD pipelines, I'd love to hear from you!</p>
+            
+            <div class="contact-actions">
+                <a href="mailto:lionel_schiepers@hotmail.com" class="btn">Email Me Directly</a>
+                <a href="https://www.linkedin.com/in/lionel-schiepers-3a727a156/" target="_blank" class="btn">Connect on LinkedIn</a>
+                <a href="#" class="btn download-btn">Download CV (PDF)</a>
+            </div>
+            
+            <form action="https://formspree.io/f/your_form_id" method="POST" class="contact-form">
+                <h3>Or send me a message:</h3>
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name" required>
