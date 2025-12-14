@@ -137,6 +137,13 @@
             display: block;
             object-fit: cover; /* Ensures image covers the area nicely */
             border: 5px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .profile-picture:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+            border-color: var(--accent-color);
         }
 
         #main-header h1 {
@@ -587,6 +594,8 @@
             <img src="Badge.jpg" alt="Profile Picture" class="profile-picture">
             <h1>Lionel Schiepers</h1>
             <p>+32 (0)478 55 14 39 | <a href="mailto:lionel_schiepers@hotmail.com">lionel_schiepers@hotmail.com</a> | Brussels</p>
+            <br />
+            <p>Cloud-Native Architect & DevOps Engineer | Azure Specialist | Automation Expert</p>
             <br /> <br/>
             <p><a href="#contact" class="btn">Get in Touch</a></p>
         </div>
@@ -595,7 +604,7 @@
     <div class="container">
         <section id="summary" class="section">
             <h2>Summary</h2>
-            <p><strong>Cloud-native architect with a passion for automation and security.</strong> With over 15 years of experience, I specialize in designing scalable, cost-optimized solutions with a strong focus on automation (IaC, CI/CD) and security. My expertise spans Azure, Kubernetes, and .NET, enabling me to deliver innovative projects and mentor high-performing technical teams.</p>
+            <p><strong>Cloud-native architect with a passion for automation and security.</strong> With over 27 years of experience, I specialize in designing scalable, cost-optimized solutions with a strong focus on automation (IaC, CI/CD) and security. My expertise spans Azure, Kubernetes, and .NET, enabling me to deliver innovative projects and mentor high-performing technical teams.</p>
             <p>Proven track record of modernizing legacy systems, reducing operational costs, and accelerating development cycles. Eager to bring my strategic vision and technical leadership to your organization's most challenging projects.</p>
         </section>
 
