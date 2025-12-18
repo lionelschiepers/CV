@@ -13,6 +13,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+        h2, h3 {
+            color: white;
+        }
+
         :root {
             --primary-color: #4A90E2;
             /* Blue */
@@ -31,6 +35,7 @@
             /* Light Gray */
             --text-secondary-color: #BDC3C7;
             --border-color: #4A90E2;
+            --heading-color: white;
         }
 
         [data-theme="light"] {
@@ -41,6 +46,7 @@
             /* Darker Gray */
             --text-secondary-color: #7F8C8D;
             --border-color: #F5A623;
+            --heading-color: #34495E;
         }
 
         body {
@@ -203,7 +209,7 @@
         }
 
         .section h3 {
-            color: var(--primary-color);
+            color: var(--heading-color);
             margin: 25px 0 15px 0;
             font-size: 1.4em;
             font-weight: 600;
@@ -212,7 +218,7 @@
         }
 
         .section h2 {
-            color: var(--primary-color);
+            color: var(--heading-color);
             border-bottom: 3px solid var(--border-color);
             padding-bottom: 15px;
             margin-bottom: 25px;
@@ -843,7 +849,7 @@
                     <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="currentColor">
                             <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                d="M12 2L3 7v10l9 5 9-5V7L12 2zm0 17.03l-7-3.88V7.85l7-3.88 7 3.88v7.29l-7 3.88z" />
                         </svg><span>Node.js</span></div>
                 </li>
             </ul>
