@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lionel Schiepers - Integration Architect & DevOps Engineer. View my CV and get in touch.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <meta name="description"
+        content="Lionel Schiepers - Integration Architect & DevOps Engineer. View my CV and get in touch.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
     <title>Lionel Schiepers - CV</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
         :root {
-            --primary-color: #4A90E2; /* Blue */
-            --secondary-color: #50E3C2; /* Teal */
-            --accent-color: #F5A623; /* Orange */
+            --primary-color: #4A90E2;
+            /* Blue */
+            --secondary-color: #50E3C2;
+            /* Teal */
+            --accent-color: #F5A623;
+            /* Orange */
         }
-        
+
         [data-theme="dark"] {
-            --bg-color: #1A252F; /* Even Darker Blue Gray */
-            --bg-secondary-color: #2C3E50; /* Dark Blue Gray */
-            --text-color: #ECF0F1; /* Light Gray */
+            --bg-color: #1A252F;
+            /* Even Darker Blue Gray */
+            --bg-secondary-color: #2C3E50;
+            /* Dark Blue Gray */
+            --text-color: #ECF0F1;
+            /* Light Gray */
             --text-secondary-color: #BDC3C7;
             --border-color: #4A90E2;
         }
 
         [data-theme="light"] {
-            --bg-color: #ECF0F1; /* Light Gray */
+            --bg-color: #ECF0F1;
+            /* Light Gray */
             --bg-secondary-color: #FFFFFF;
-            --text-color: #34495E; /* Darker Gray */
+            --text-color: #34495E;
+            /* Darker Gray */
             --text-secondary-color: #7F8C8D;
             --border-color: #F5A623;
         }
@@ -59,7 +70,7 @@
             margin-bottom: 30px;
             position: relative;
         }
-        
+
         .header-top {
             position: absolute;
             top: 20px;
@@ -120,11 +131,11 @@
             border-radius: 50%;
         }
 
-        .theme-switch-checkbox:checked + .theme-switch-label {
+        .theme-switch-checkbox:checked+.theme-switch-label {
             background-color: var(--primary-color);
         }
 
-        .theme-switch-checkbox:checked + .theme-switch-label:before {
+        .theme-switch-checkbox:checked+.theme-switch-label:before {
             transform: translateX(26px);
         }
 
@@ -132,14 +143,16 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background-color: var(--secondary-color); /* Placeholder color */
+            background-color: var(--secondary-color);
+            /* Placeholder color */
             margin: 0 auto 20px auto;
             display: block;
-            object-fit: cover; /* Ensures image covers the area nicely */
+            object-fit: cover;
+            /* Ensures image covers the area nicely */
             border: 5px solid var(--primary-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .profile-picture:hover {
             transform: scale(1.05) rotate(2deg);
             box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
@@ -155,17 +168,22 @@
         #main-header p {
             margin: 0;
             font-size: 1.1em;
-            color: var(--text-color); /* Use theme-aware text color */
+            color: var(--text-color);
+            /* Use theme-aware text color */
         }
-        
+
         #main-header p a {
-            color: var(--text-color); /* Use theme-aware text color for links */
-            text-decoration: none; /* Remove underline for cleaner look */
+            color: var(--text-color);
+            /* Use theme-aware text color for links */
+            text-decoration: none;
+            /* Remove underline for cleaner look */
         }
-        
+
         #main-header p a:hover {
-            color: var(--text-color); /* Keep same color on hover */
-            text-decoration: underline; /* Add underline on hover for feedback */
+            color: var(--text-color);
+            /* Keep same color on hover */
+            text-decoration: underline;
+            /* Add underline on hover for feedback */
         }
 
         .section {
@@ -183,7 +201,7 @@
             opacity: 1;
             transform: translateX(0);
         }
-        
+
         .section h3 {
             color: var(--primary-color);
             margin: 25px 0 15px 0;
@@ -261,43 +279,56 @@
             background: var(--bg-secondary-color);
             animation: staggerIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
             animation-play-state: running;
-            opacity: 0; /* Start as invisible */
+            opacity: 0;
+            /* Start as invisible */
         }
 
         .skills-list li a {
-            color: var(--text-color); /* Use theme's text color */
+            color: var(--text-color);
+            /* Use theme's text color */
             text-decoration: none;
         }
-        
+
         [data-theme="dark"] .skills-list li a {
             color: var(--light-text);
         }
-        
+
         .skills-list li .icon-text-pair {
             display: flex;
             align-items: center;
-            gap: 8px; /* Space between icon and text */
+            gap: 8px;
+            /* Space between icon and text */
         }
+
         .skills-list li svg {
-            width: 16px; /* Ensure consistent icon size */
+            width: 16px;
+            /* Ensure consistent icon size */
             height: 16px;
-            flex-shrink: 0; /* Prevent icon from shrinking */
+            flex-shrink: 0;
+            /* Prevent icon from shrinking */
         }
-        
+
         .skills-list li:hover {
             background: var(--accent-color);
-            transform: translateY(-8px) scale(1.1); /* More pronounced lift and scale */
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+            transform: translateY(-8px) scale(1.1);
+            /* More pronounced lift and scale */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            /* Stronger shadow */
         }
 
         #certifications p a {
             color: var(--text-color);
             text-decoration: none;
-            display: inline-block; /* Make it block-like for padding and background */
-            padding: 8px 15px; /* Example padding, adjust as needed */
-            border-radius: 5px; /* Slightly rounded corners */
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
-            background: var(--bg-secondary-color); /* Default background, or transparent */
+            display: inline-block;
+            /* Make it block-like for padding and background */
+            padding: 8px 15px;
+            /* Example padding, adjust as needed */
+            border-radius: 5px;
+            /* Slightly rounded corners */
+            transition: all 0.3s ease;
+            /* Smooth transition for hover effects */
+            background: var(--bg-secondary-color);
+            /* Default background, or transparent */
         }
 
         #certifications p a:hover {
@@ -363,45 +394,45 @@
             background: var(--accent-color);
             transform: translateY(-2px);
         }
-        
+
         .download-btn {
             background: var(--secondary-color);
         }
-        
+
         .download-btn:hover {
             background: var(--accent-color);
         }
-        
+
         .contact-actions {
             margin: 20px 0;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-        
+
         .contact-form {
             margin-top: 30px;
             padding-top: 20px;
             border-top: 1px dashed var(--border-color);
         }
-        
+
         .project {
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 1px dashed var(--border-color);
         }
-        
+
         .project h3 {
             color: var(--text-color);
             margin: 0 0 10px 0;
             font-size: 1.3em;
             font-weight: 600;
         }
-        
+
         .project p {
             margin: 5px 0;
         }
-        
+
         .form-status {
             margin-top: 15px;
             padding: 10px;
@@ -410,17 +441,17 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .form-status.visible {
             opacity: 1;
         }
-        
+
         .form-status.success {
             background-color: rgba(74, 144, 226, 0.2);
             color: var(--primary-color);
             border: 1px solid var(--primary-color);
         }
-        
+
         .form-status.error {
             background-color: rgba(255, 0, 0, 0.1);
             color: #ff6b6b;
@@ -433,6 +464,7 @@
                 opacity: 0;
                 transform: translateY(40px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -444,20 +476,23 @@
                 opacity: 0;
                 transform: translateY(-100px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
+
             75% {
                 transform: translateY(10px);
             }
         }
-        
+
         @keyframes staggerIn {
             from {
                 opacity: 0;
                 transform: translateX(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -476,59 +511,138 @@
         #certifications p {
             animation: staggerIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
             animation-play-state: running;
-            opacity: 0; /* Start as invisible */
+            opacity: 0;
+            /* Start as invisible */
         }
-        
-        .job ul, .skills-list {
+
+        .job ul,
+        .skills-list {
             --stagger-delay: 100ms;
         }
 
         .job ul li:nth-child(1),
-        .skills-list li:nth-child(1) { animation-delay: calc(1 * var(--stagger-delay)); }
+        .skills-list li:nth-child(1) {
+            animation-delay: calc(1 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(2),
-        .skills-list li:nth-child(2) { animation-delay: calc(2 * var(--stagger-delay)); }
+        .skills-list li:nth-child(2) {
+            animation-delay: calc(2 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(3),
-        .skills-list li:nth-child(3) { animation-delay: calc(3 * var(--stagger-delay)); }
+        .skills-list li:nth-child(3) {
+            animation-delay: calc(3 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(4),
-        .skills-list li:nth-child(4) { animation-delay: calc(4 * var(--stagger-delay)); }
+        .skills-list li:nth-child(4) {
+            animation-delay: calc(4 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(5),
-        .skills-list li:nth-child(5) { animation-delay: calc(5 * var(--stagger-delay)); }
+        .skills-list li:nth-child(5) {
+            animation-delay: calc(5 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(6),
-        .skills-list li:nth-child(6) { animation-delay: calc(6 * var(--stagger-delay)); }
+        .skills-list li:nth-child(6) {
+            animation-delay: calc(6 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(7),
-        .skills-list li:nth-child(7) { animation-delay: calc(7 * var(--stagger-delay)); }
+        .skills-list li:nth-child(7) {
+            animation-delay: calc(7 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(8),
-        .skills-list li:nth-child(8) { animation-delay: calc(8 * var(--stagger-delay)); }
+        .skills-list li:nth-child(8) {
+            animation-delay: calc(8 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(9),
-        .skills-list li:nth-child(9) { animation-delay: calc(9 * var(--stagger-delay)); }
+        .skills-list li:nth-child(9) {
+            animation-delay: calc(9 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(10),
-        .skills-list li:nth-child(10) { animation-delay: calc(10 * var(--stagger-delay)); }
+        .skills-list li:nth-child(10) {
+            animation-delay: calc(10 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(11),
-        .skills-list li:nth-child(11) { animation-delay: calc(11 * var(--stagger-delay)); }
+        .skills-list li:nth-child(11) {
+            animation-delay: calc(11 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(12),
-        .skills-list li:nth-child(12) { animation-delay: calc(12 * var(--stagger-delay)); }
+        .skills-list li:nth-child(12) {
+            animation-delay: calc(12 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(13),
-        .skills-list li:nth-child(13) { animation-delay: calc(13 * var(--stagger-delay)); }
+        .skills-list li:nth-child(13) {
+            animation-delay: calc(13 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(14),
-        .skills-list li:nth-child(14) { animation-delay: calc(14 * var(--stagger-delay)); }
+        .skills-list li:nth-child(14) {
+            animation-delay: calc(14 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(15),
-        .skills-list li:nth-child(15) { animation-delay: calc(15 * var(--stagger-delay)); }
+        .skills-list li:nth-child(15) {
+            animation-delay: calc(15 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(16),
-        .skills-list li:nth-child(16) { animation-delay: calc(16 * var(--stagger-delay)); }
+        .skills-list li:nth-child(16) {
+            animation-delay: calc(16 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(17),
-        .skills-list li:nth-child(17) { animation-delay: calc(17 * var(--stagger-delay)); }
+        .skills-list li:nth-child(17) {
+            animation-delay: calc(17 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(18),
-        .skills-list li:nth-child(18) { animation-delay: calc(18 * var(--stagger-delay)); }
+        .skills-list li:nth-child(18) {
+            animation-delay: calc(18 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(19),
-        .skills-list li:nth-child(19) { animation-delay: calc(19 * var(--stagger-delay)); }
+        .skills-list li:nth-child(19) {
+            animation-delay: calc(19 * var(--stagger-delay));
+        }
+
         .job ul li:nth-child(20),
-        .skills-list li:nth-child(20) { animation-delay: calc(20 * var(--stagger-delay)); }
-        .skills-list li:nth-child(21) { animation-delay: calc(21 * var(--stagger-delay)); }
-        .skills-list li:nth-child(22) { animation-delay: calc(22 * var(--stagger-delay)); }
-        .skills-list li:nth-child(23) { animation-delay: calc(23 * var(--stagger-delay)); }
-        .skills-list li:nth-child(24) { animation-delay: calc(24 * var(--stagger-delay)); }
-        .skills-list li:nth-child(25) { animation-delay: calc(25 * var(--stagger-delay)); }
-        .skills-list li:nth-child(26) { animation-delay: calc(26 * var(--stagger-delay)); }
+        .skills-list li:nth-child(20) {
+            animation-delay: calc(20 * var(--stagger-delay));
+        }
+
+        .skills-list li:nth-child(21) {
+            animation-delay: calc(21 * var(--stagger-delay));
+        }
+
+        .skills-list li:nth-child(22) {
+            animation-delay: calc(22 * var(--stagger-delay));
+        }
+
+        .skills-list li:nth-child(23) {
+            animation-delay: calc(23 * var(--stagger-delay));
+        }
+
+        .skills-list li:nth-child(24) {
+            animation-delay: calc(24 * var(--stagger-delay));
+        }
+
+        .skills-list li:nth-child(25) {
+            animation-delay: calc(25 * var(--stagger-delay));
+        }
+
+        .skills-list li:nth-child(26) {
+            animation-delay: calc(26 * var(--stagger-delay));
+        }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -577,14 +691,29 @@
         }
     </style>
 </head>
+
 <body data-theme="dark">
     <header id="main-header">
         <div class="container">
             <div class="header-top">
                 <div class="social-links">
-                    <a href="mailto:lionel_schiepers@hotmail.com" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.728v15.441h24v-15.441l-12 9.728z"/></svg></a>
-                    <a href="https://www.linkedin.com/in/lionel-schiepers-3a727a156/" target="_blank" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                    <a href="https://github.com/lionelschiepers" target="_blank" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                    <a href="mailto:lionel_schiepers@hotmail.com" title="Email"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.728v15.441h24v-15.441l-12 9.728z" />
+                        </svg></a>
+                    <a href="https://www.linkedin.com/in/lionel-schiepers-3a727a156/" target="_blank"
+                        title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg></a>
+                    <a href="https://github.com/lionelschiepers" target="_blank" title="GitHub"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg></a>
                 </div>
                 <div class="theme-switcher">
                     <input type="checkbox" id="theme-switch" class="theme-switch-checkbox">
@@ -593,10 +722,11 @@
             </div>
             <img src="Badge.jpg" alt="Profile Picture" class="profile-picture">
             <h1>Lionel Schiepers</h1>
-            <p>+32 (0)478 55 14 39 | <a href="mailto:lionel_schiepers@hotmail.com">lionel_schiepers@hotmail.com</a> | Brussels</p>
+            <p>+32 (0)478 55 14 39 | <a href="mailto:lionel_schiepers@hotmail.com">lionel_schiepers@hotmail.com</a> |
+                Brussels</p>
             <br />
             <p>Cloud-Native Architect & DevOps Engineer | Azure Specialist | Automation Expert</p>
-            <br /> <br/>
+            <br /> <br />
             <p><a href="#contact" class="btn">Get in Touch</a></p>
         </div>
     </header>
@@ -604,68 +734,211 @@
     <div class="container">
         <section id="summary" class="section">
             <h2>Summary</h2>
-            <p><strong>Cloud-native architect with a passion for automation and security.</strong> With over 27 years of experience, I specialize in designing scalable, cost-optimized solutions with a strong focus on automation (IaC, CI/CD) and security. My expertise spans Azure, Kubernetes, and .NET, enabling me to deliver innovative projects and mentor high-performing technical teams.</p>
-            <p>Proven track record of modernizing legacy systems, reducing operational costs, and accelerating development cycles. Eager to bring my strategic vision and technical leadership to your organization's most challenging projects.</p>
+            <p><strong>Cloud-native architect with a passion for automation and security.</strong> With over 27 years of
+                experience, I specialize in designing scalable, cost-optimized solutions with a strong focus on
+                automation (IaC, CI/CD) and security. My expertise spans Azure, Kubernetes, and .NET, enabling me to
+                deliver innovative projects and mentor high-performing technical teams.</p>
+            <p>Proven track record of modernizing legacy systems, reducing operational costs, and accelerating
+                development cycles. Eager to bring my strategic vision and technical leadership to your organization's
+                most challenging projects.</p>
         </section>
 
-        
 
-        
 
-<section id="technologies" class="section">
+
+
+        <section id="technologies" class="section">
             <h2>Technologies</h2>
-            
+
             <h3>Cloud & DevOps</h3>
             <ul class="skills-list">
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5v-9l6 4.5-6 4.5z"/></svg><span>Azure</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Azure DevOps</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H6V4h8v16z"/></svg><span>Azure YAML Build Pipelines</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure Monitoring</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5v-9l6 4.5-6 4.5z"/></svg><span>Azure API Management</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>IaC (Terraform, Bicep)</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Kubernetes</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Grafana</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure Data Factory</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Azure DataBricks</span></div></li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5v-9l6 4.5-6 4.5z" />
+                        </svg><span>Azure</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg><span>Azure DevOps</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H6V4h8v16z" />
+                        </svg><span>Azure YAML Build Pipelines</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Azure Monitoring</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5v-9l6 4.5-6 4.5z" />
+                        </svg><span>Azure API Management</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg><span>IaC (Terraform, Bicep)</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Kubernetes</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Grafana</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Azure Data Factory</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Azure DataBricks</span></div>
+                </li>
             </ul>
-            
+
             <h3>Programming & Scripting</h3>
             <ul class="skills-list">
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>PowerShell / Bash</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>.NET / .NET Framework</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Node.js</span></div></li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>PowerShell / Bash</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>.NET / .NET Framework</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Node.js</span></div>
+                </li>
             </ul>
-            
+
             <h3>Infrastructure & Security</h3>
             <ul class="skills-list">
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Windows / IIS</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Linux</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Containers</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Nginx</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>SQL Server</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>OAuth 2.0</span></div></li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Windows / IIS</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Linux</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Containers</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Nginx</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>SQL Server</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>OAuth 2.0</span></div>
+                </li>
             </ul>
-            
+
             <h3>APIs & Development Tools</h3>
             <ul class="skills-list">
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>API (REST, OpenAPI, Swagger, GraphQL)</span></div></li>
-                <li><div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Code Quality (SonarQube)</span></div></li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>API (REST, OpenAPI, Swagger, GraphQL)</span></div>
+                </li>
+                <li>
+                    <div class="icon-text-pair"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg><span>Code Quality (SonarQube)</span></div>
+                </li>
             </ul>
         </section>
 
-<section id="experience" class="section">
+        <section id="experience" class="section">
             <h2>Experience</h2>
             <div class="job">
                 <h3>Integration Architect & DevOps Engineer | May 2025 - Present</h3>
                 <p><strong>Fédérale Assurance</strong></p>
                 <ul>
-                    <li>I mentor the developers about modernizing the applications: .NET 10 coming in november, Aspire, PaaS like App Services, Azure Container Apps or Azure (Durable) Function, proactive monitoring with Application Insights or OpenTelemetry instead of waiting for the client to complain (worst situation), Azure RBAC and Managed Identity to avoid password, KeyVault integration inside .NET Apps, structured logging, native security about authentication and authorization inside the services instead of delegating that functionality to a less secure solution etc.</li>
-                    <li>I facilitate the resolution of complex situations that involves many competencies at the same time (infrastructure, security, development, network) thanks to my broad transversal experiences.</li>
-                    <li>I reduce the time of development thanks to advising new strategies, out of the box, approaches.</li>
-                    <li>I challenge the solution architectures to reduce the cost (opex) and increase the security thanks to my technical knowledge with a lean and business first approach.</li>
-                    <li>I modernize old Classic Azure Build Pipelines to modern YAML Build Pipeline using a common framework to reduce the maintenance cost.</li>
-                    <li>I expose services through Azure API Management Service. The APIM is used as a service catalog and takes in charge the security for legacy systems that doesn't support native security. The deployment are done with IaC Bicep.</li>
-                    <li>I modernize Biztalk orchestrations to Secure .NET 10 Services (Minimal API, OpenAPI, OAuth 2.0, Application Insight, KeyVault, xUnit unit & integration tests etc).</li>
+                    <li>I mentor the developers about modernizing the applications: .NET 10 coming in november, Aspire,
+                        PaaS like App Services, Azure Container Apps or Azure (Durable) Function, proactive monitoring
+                        with Application Insights or OpenTelemetry instead of waiting for the client to complain (worst
+                        situation), Azure RBAC and Managed Identity to avoid password, KeyVault integration inside .NET
+                        Apps, structured logging, native security about authentication and authorization inside the
+                        services instead of delegating that functionality to a less secure solution etc.</li>
+                    <li>I facilitate the resolution of complex situations that involves many competencies at the same
+                        time (infrastructure, security, development, network) thanks to my broad transversal
+                        experiences.</li>
+                    <li>I reduce the time of development thanks to advising new strategies, out of the box, approaches.
+                    </li>
+                    <li>I challenge the solution architectures to reduce the cost (opex) and increase the security
+                        thanks to my technical knowledge with a lean and business first approach.</li>
+                    <li>I modernize old Classic Azure Build Pipelines to modern YAML Build Pipeline using a common
+                        framework to reduce the maintenance cost.</li>
+                    <li>I expose services through Azure API Management Service. The APIM is used as a service catalog
+                        and takes in charge the security for legacy systems that doesn't support native security. The
+                        deployment are done with IaC Bicep.</li>
+                    <li>I modernize Biztalk orchestrations to Secure .NET 10 Services (Minimal API, OpenAPI, OAuth 2.0,
+                        Application Insight, KeyVault, xUnit unit & integration tests etc).</li>
                     <li>I maintain the on-premise Azure DevOps platform.</li>
                 </ul>
             </div>
@@ -673,12 +946,18 @@
                 <h3>Azure Architect & DevOps Engineer | Nov 2023 - June 2024</h3>
                 <p><strong>D'Ieteren</strong></p>
                 <ul>
-                    <li>I'm responsible of the CI/CD platform with Azure DevOps. I migrate all Azure DevOps pipelines from classic to YAML.</li>
-                    <li>I'm responsible of the GraphQL developments & deployments with containers. For example integrating Data Api Builder with the inhouse authorization provider.</li>
-                    <li>I'm in charge of all .NET developments made for the data platform team (microservice, .NET Core 6 or 8, Azure Durable Function, SQL Server etc…).</li>
-                    <li>I maintain the existing stack (for example migrating .NET Core 3.1 to the latest LTS .NET Core 8 or migrating Azure Durable Function from inproc to isolated worker).</li>
+                    <li>I'm responsible of the CI/CD platform with Azure DevOps. I migrate all Azure DevOps pipelines
+                        from classic to YAML.</li>
+                    <li>I'm responsible of the GraphQL developments & deployments with containers. For example
+                        integrating Data Api Builder with the inhouse authorization provider.</li>
+                    <li>I'm in charge of all .NET developments made for the data platform team (microservice, .NET Core
+                        6 or 8, Azure Durable Function, SQL Server etc…).</li>
+                    <li>I maintain the existing stack (for example migrating .NET Core 3.1 to the latest LTS .NET Core 8
+                        or migrating Azure Durable Function from inproc to isolated worker).</li>
                     <li>I monitor applications health.</li>
-                    <li>I challenge infrastructure & integration about security (oauth, firewall…), performance (http compression, traffic over fetching, sql schema…) & cost. For example not using everywhere nvarchar(max).</li>
+                    <li>I challenge infrastructure & integration about security (oauth, firewall…), performance (http
+                        compression, traffic over fetching, sql schema…) & cost. For example not using everywhere
+                        nvarchar(max).</li>
                 </ul>
             </div>
             <div class="job">
@@ -689,7 +968,8 @@
                     <li>I deploy and manage a Kubernetes monitoring stack on-premise with Prometheus/Grafana.</li>
                     <li>I'm in charge of the code quality with the help of SonarQube.</li>
                     <li>I give advises about how to reduce the learning curve or reduce the cost.</li>
-                    <li>I help the developers to troubleshoot the production issues and give advises for future improvements.</li>
+                    <li>I help the developers to troubleshoot the production issues and give advises for future
+                        improvements.</li>
                 </ul>
             </div>
             <div class="job">
@@ -700,16 +980,19 @@
                     <li>I lead a team of developers based in Tunisia.</li>
                     <li>Scrum master.</li>
                     <li>I'm in charge of the Azure DevOps environment (CI/CD, deployment with terraform).</li>
-                    <li>Tech lead for the .NET Developments on Azure (Microservice, .NET Core 6, unit test, DDD, Event Driven, CQRS).</li>
+                    <li>Tech lead for the .NET Developments on Azure (Microservice, .NET Core 6, unit test, DDD, Event
+                        Driven, CQRS).</li>
                     <li>Release Management, GIT branching strategy.</li>
-                    <li>I maintain the existing network architecture (application gateway, load balancing, health monitoring, firewall etc).</li>
+                    <li>I maintain the existing network architecture (application gateway, load balancing, health
+                        monitoring, firewall etc).</li>
                 </ul>
             </div>
             <div class="job">
                 <h3>Senior Consultant | Feb 2022 - Apr 2022</h3>
                 <p><strong>Capgemini</strong></p>
                 <ul>
-                    <li>I design & deploy a Hub & Spoke network architecture on Azure to host the low code platform. This includes segregated production & non-production environments.</li>
+                    <li>I design & deploy a Hub & Spoke network architecture on Azure to host the low code platform.
+                        This includes segregated production & non-production environments.</li>
                     <li>I get the AZ-204 certification (developing solutions for Azure).</li>
                 </ul>
             </div>
@@ -721,20 +1004,29 @@
                     <li>Responsible of the code quality by using i.e. SonarQube & unit tests.</li>
                     <li>I design Azure architectures for micro services related projects.</li>
                     <li>I design OpenAPI or GraphQL API.</li>
-                    <li>Tech Lead for the development of a mobile application (react native) using back-end micro services (.NET Core). The team is composed of 5 developers.</li>
+                    <li>Tech Lead for the development of a mobile application (react native) using back-end micro
+                        services (.NET Core). The team is composed of 5 developers.</li>
                 </ul>
             </div>
             <div class="job">
                 <h3>Team Lead – Tech Lead | Jul 1998 - Dec 2019</h3>
                 <p><strong>Bureau van Dijk / Moody's Analytics</strong></p>
                 <ul>
-                    <li>2017 - I lead a team of developers. I directly report to the CTO. I'm in charge of the planning / career development.</li>
-                    <li>2017 - I install a NoSQL cluster with HA capabilities to store more than 100M+ documents about patents.</li>
-                    <li>2016 - I implement a cloud infrastructure in china (firewall, load balancer, monitoring/health check, SQL databases, web servers).</li>
-                    <li>2009 - I create a standalone web server (based on cassini) that allows to distribute the internet applications on bluray discs as a standalone application.</li>
-                    <li>2007 - I create a distributed application used to encode merger & acquisition data. The application is used in Brussels - Manchester - Singapore. It relies on a distributed SQL merge replication.</li>
-                    <li>2005 - I create a distributed monitoring system that monitors web applications, servers, routers... and takes actions when a node is failed + reporting to the manager & QA team.</li>
-                    <li>2000 - - I create a Continuous Integration system that automates source branching and setup deployment.</li>
+                    <li>2017 - I lead a team of developers. I directly report to the CTO. I'm in charge of the planning
+                        / career development.</li>
+                    <li>2017 - I install a NoSQL cluster with HA capabilities to store more than 100M+ documents about
+                        patents.</li>
+                    <li>2016 - I implement a cloud infrastructure in china (firewall, load balancer, monitoring/health
+                        check, SQL databases, web servers).</li>
+                    <li>2009 - I create a standalone web server (based on cassini) that allows to distribute the
+                        internet applications on bluray discs as a standalone application.</li>
+                    <li>2007 - I create a distributed application used to encode merger & acquisition data. The
+                        application is used in Brussels - Manchester - Singapore. It relies on a distributed SQL merge
+                        replication.</li>
+                    <li>2005 - I create a distributed monitoring system that monitors web applications, servers,
+                        routers... and takes actions when a node is failed + reporting to the manager & QA team.</li>
+                    <li>2000 - - I create a Continuous Integration system that automates source branching and setup
+                        deployment.</li>
                 </ul>
             </div>
         </section>
@@ -749,29 +1041,33 @@
             <h2>Key Projects</h2>
             <div class="project">
                 <h3>Azure DevOps Pipeline Modernization</h3>
-                <p>Led the migration of 50+ Classic Azure Build Pipelines to YAML, implementing a common framework that reduced maintenance costs by 40% and improved deployment reliability by 60%.</p>
+                <p>Led the migration of 50+ Classic Azure Build Pipelines to YAML, implementing a common framework that
+                    reduced maintenance costs by 40% and improved deployment reliability by 60%.</p>
                 <p><strong>Technologies:</strong> Azure DevOps, YAML, Bicep, PowerShell</p>
                 <p><strong>Impact:</strong> Reduced pipeline failures by 50%, accelerated deployment cycles by 35%</p>
             </div>
-            
+
             <div class="project">
                 <h3>Legacy System Modernization</h3>
-                <p>Modernized 10+ BizTalk orchestrations to secure .NET 10 services with Minimal API, OpenAPI, OAuth 2.0, and comprehensive testing, improving system security and maintainability.</p>
+                <p>Modernized 10+ BizTalk orchestrations to secure .NET 10 services with Minimal API, OpenAPI, OAuth
+                    2.0, and comprehensive testing, improving system security and maintainability.</p>
                 <p><strong>Technologies:</strong> .NET 10, Minimal API, OpenAPI, OAuth 2.0, xUnit, Azure Key Vault</p>
                 <p><strong>Impact:</strong> Enhanced security posture, reduced technical debt by 70%</p>
             </div>
-            
+
             <div class="project">
                 <h3>Cloud-Native API Platform</h3>
-                <p>Designed and implemented Azure API Management Service as a security layer and service catalog for legacy systems, improving API governance and security.</p>
+                <p>Designed and implemented Azure API Management Service as a security layer and service catalog for
+                    legacy systems, improving API governance and security.</p>
                 <p><strong>Technologies:</strong> Azure API Management, Bicep, OAuth 2.0, Application Insights</p>
                 <p><strong>Impact:</strong> Centralized API governance, improved security compliance by 80%</p>
             </div>
         </section>
-        
+
         <section id="certifications" class="section">
             <h2>Certifications</h2>
-            <p><a href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-204">AZ-204: Developing Solutions for Microsoft Azure</a> (2022)</p>
+            <p><a href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-204">AZ-204:
+                    Developing Solutions for Microsoft Azure</a> (2022)</p>
         </section>
 
         <section id="hobbies" class="section">
@@ -785,14 +1081,17 @@
 
         <section id="contact" class="section">
             <h2>Let's Connect</h2>
-            <p>I'm always open to discussing new opportunities, collaborations, or innovative projects. Whether you're looking for an experienced architect to lead your cloud transformation or a DevOps expert to optimize your CI/CD pipelines, I'd love to hear from you!</p>
-            
+            <p>I'm always open to discussing new opportunities, collaborations, or innovative projects. Whether you're
+                looking for an experienced architect to lead your cloud transformation or a DevOps expert to optimize
+                your CI/CD pipelines, I'd love to hear from you!</p>
+
             <div class="contact-actions">
                 <a href="mailto:lionel_schiepers@hotmail.com" class="btn">Email Me Directly</a>
-                <a href="https://www.linkedin.com/in/lionel-schiepers-3a727a156/" target="_blank" class="btn">Connect on LinkedIn</a>
+                <a href="https://www.linkedin.com/in/lionel-schiepers-3a727a156/" target="_blank" class="btn">Connect on
+                    LinkedIn</a>
                 <a href="CV.pdf" class="btn download-btn" download>Download CV (PDF)</a>
             </div>
-            
+
             <!-- Contact Form Setup Instructions:
                  1. Go to https://formspree.io/ and create a free account
                  2. Create a new form and copy your form endpoint URL
@@ -818,127 +1117,128 @@
             </form>
         </section>
     </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const themeSwitch = document.getElementById('theme-switch');
-        const body = document.body;
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeSwitch = document.getElementById('theme-switch');
+            const body = document.body;
 
-        // Set initial theme based on saved preference or default to dark
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            body.setAttribute('data-theme', savedTheme);
-            themeSwitch.checked = savedTheme === 'light';
-        } else {
-            body.setAttribute('data-theme', 'dark');
-            themeSwitch.checked = false;
-        }
-
-        themeSwitch.addEventListener('change', function() {
-            if (this.checked) {
-                body.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
+            // Set initial theme based on saved preference or default to dark
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.setAttribute('data-theme', savedTheme);
+                themeSwitch.checked = savedTheme === 'light';
             } else {
                 body.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
+                themeSwitch.checked = false;
+            }
+
+            themeSwitch.addEventListener('change', function () {
+                if (this.checked) {
+                    body.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    body.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            const jobs = document.querySelectorAll('.job');
+
+            const sections = document.querySelectorAll('.section');
+
+
+
+            const observer = new IntersectionObserver(entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('is-visible');
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            }, {
+
+                threshold: 0.1
+
+            });
+
+
+
+            jobs.forEach(job => {
+
+                observer.observe(job);
+
+            });
+
+
+
+            sections.forEach(section => {
+
+                observer.observe(section);
+
+            });
+
+            // Contact form handling
+            const contactForm = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        message: document.getElementById('message').value
+                    };
+
+                    // Show loading state
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+
+                    // Use Formspree endpoint (you'll need to replace this with your actual Formspree URL)
+                    // For now, I'll implement a fallback that shows the data would be sent
+                    console.log('Form submission:', formData);
+
+                    // Simulate API call (replace this with actual Formspree fetch call)
+                    setTimeout(() => {
+                        // This is a simulation - in production you would use:
+                        fetch('https://formspree.io/f/mldqvozv', {
+                            method: 'POST',
+                            body: JSON.stringify(formData),
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        })
+
+                        // For now, show success message
+                        showFormStatus('success', 'Thank you for your message! I will get back to you soon.');
+                        contactForm.reset();
+
+                        submitBtn.textContent = 'Send Message';
+                        submitBtn.disabled = false;
+                    }, 1500);
+                });
+            }
+
+            function showFormStatus(type, message) {
+                formStatus.textContent = message;
+                formStatus.className = 'form-status ' + type + ' visible';
+
+                // Hide status after 5 seconds
+                setTimeout(() => {
+                    formStatus.className = 'form-status ' + type;
+                }, 5000);
             }
         });
-
-                const jobs = document.querySelectorAll('.job');
-
-                const sections = document.querySelectorAll('.section');
-
-        
-
-                const observer = new IntersectionObserver(entries => {
-
-                    entries.forEach(entry => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add('is-visible');
-
-                            observer.unobserve(entry.target);
-
-                        }
-
-                    });
-
-                }, {
-
-                    threshold: 0.1
-
-                });
-
-        
-
-                jobs.forEach(job => {
-
-                    observer.observe(job);
-
-                });
-
-        
-
-                sections.forEach(section => {
-
-                    observer.observe(section);
-
-                });
-
-        // Contact form handling
-        const contactForm = document.getElementById('contactForm');
-        const formStatus = document.getElementById('formStatus');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                const formData = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    message: document.getElementById('message').value
-                };
-
-                // Show loading state
-                const submitBtn = contactForm.querySelector('button[type="submit"]');
-                submitBtn.textContent = 'Sending...';
-                submitBtn.disabled = true;
-
-                // Use Formspree endpoint (you'll need to replace this with your actual Formspree URL)
-                // For now, I'll implement a fallback that shows the data would be sent
-                console.log('Form submission:', formData);
-
-                // Simulate API call (replace this with actual Formspree fetch call)
-                setTimeout(() => {
-                    // This is a simulation - in production you would use:
-                    fetch('https://formspree.io/f/mldqvozv', {
-                         method: 'POST',
-                         body: JSON.stringify(formData),
-                         headers: {
-                             'Content-Type': 'application/json'
-                         }
-                    })
-
-                    // For now, show success message
-                    showFormStatus('success', 'Thank you for your message! I will get back to you soon.');
-                    contactForm.reset();
-                    
-                    submitBtn.textContent = 'Send Message';
-                    submitBtn.disabled = false;
-                }, 1500);
-            });
-        }
-
-        function showFormStatus(type, message) {
-            formStatus.textContent = message;
-            formStatus.className = 'form-status ' + type + ' visible';
-            
-            // Hide status after 5 seconds
-            setTimeout(() => {
-                formStatus.className = 'form-status ' + type;
-            }, 5000);
-        }
-    });
-</script>
+    </script>
 </body>
+
 </html>
