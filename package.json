@@ -9,7 +9,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "build": "echo \"Building CV...\"",
-    "deploy": "gh-pages -d . -b gh-pages -m \"Deploy CV to GitHub Pages\"",
+    "deploy": "gh-pages -d ./LandingPage -b gh-pages -m \"Deploy CV to GitHub Pages\"",
     "publish": "npm run deploy"
   },
   "devDependencies": {
