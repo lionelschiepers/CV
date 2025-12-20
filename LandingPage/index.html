@@ -651,6 +651,32 @@
             animation-delay: calc(26 * var(--stagger-delay));
         }
 
+
+        /* Snow Effect */
+        #snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1001;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh);
+            }
+        }
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .container {
@@ -1360,6 +1386,25 @@
                 setTimeout(() => {
                     formStatus.className = 'form-status ' + type;
                 }, 5000);
+            }
+
+            // Snow effect
+            const today = new Date();
+            if (today.getMonth() === 11) { // 11 is for December
+                const snowContainer = document.createElement('div');
+                snowContainer.id = 'snow-container';
+                document.body.appendChild(snowContainer);
+
+                for (let i = 0; i < 100; i++) {
+                    const snowflake = document.createElement('div');
+                    snowflake.className = 'snowflake';
+                    snowflake.style.left = Math.random() * 100 + 'vw';
+                    snowflake.style.width = Math.random() * 5 + 'px';
+                    snowflake.style.height = snowflake.style.width;
+                    snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                    snowflake.style.animationDelay = Math.random() * 5 + 's';
+                    snowContainer.appendChild(snowflake);
+                }
             }
         });
     </script>
