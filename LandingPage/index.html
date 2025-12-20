@@ -24,12 +24,14 @@
         }
 
         [data-theme="dark"] {
-            --primary-color: #2C3E50;
-            --secondary-color: #34495E;
+            --primary-color: #1E2B36;
+            /* Darker, inspired by background */
+            --secondary-color: #23313D;
+            /* Darker, inspired by background */
             --bg-color: #121A20;
-            /* New Even Darker Blue Gray */
-            --bg-secondary-color: #1A252F;
-            /* New Dark Blue Gray (old bg-color) */
+            /* Even Darker Blue Gray */
+            --bg-secondary-color: #151F26;
+            /* Dark Blue Gray */
             --text-color: #ECF0F1;
             /* Light Gray */
             --text-secondary-color: #BDC3C7;
@@ -739,17 +741,25 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            display: flex; /* Add this */
-            justify-content: center; /* Add this */
-            align-items: center; /* Add this */
+            display: none;
+            /* Use flexbox for centering */
+            justify-content: center;
+            align-items: center;
             width: 40px;
             height: 40px;
             background: var(--primary-color);
             color: white;
-            /* Removed text-align and line-height as flexbox handles centering */
             border-radius: 50%;
             z-index: 1000;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s, visibility 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #backToTopBtn.visible {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
         }
 
         #backToTopBtn:hover {
@@ -1341,9 +1351,9 @@
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300) {
-                    backToTopBtn.style.display = 'block';
+                    backToTopBtn.classList.add('visible');
                 } else {
-                    backToTopBtn.style.display = 'none';
+                    backToTopBtn.classList.remove('visible');
                 }
             });
 
