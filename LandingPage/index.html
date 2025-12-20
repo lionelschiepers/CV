@@ -19,15 +19,13 @@
         }
 
         :root {
-            --primary-color: #4A90E2;
-            /* Blue */
-            --secondary-color: #50E3C2;
-            /* Teal */
             --accent-color: #F5A623;
             /* Orange */
         }
 
         [data-theme="dark"] {
+            --primary-color: #2C3E50;
+            --secondary-color: #34495E;
             --bg-color: #1A252F;
             /* Even Darker Blue Gray */
             --bg-secondary-color: #2C3E50;
@@ -40,6 +38,8 @@
         }
 
         [data-theme="light"] {
+            --primary-color: #dcdfe2;
+            --secondary-color: #e9ecef;
             --bg-color: #ECF0F1;
             /* Light Gray */
             --bg-secondary-color: #FFFFFF;
@@ -48,6 +48,14 @@
             --text-secondary-color: #7F8C8D;
             --border-color: #34495E;
             --heading-color: #34495E;
+        }
+
+        [data-theme="light"] .btn {
+            color: var(--text-color);
+        }
+
+        [data-theme="light"] #backToTopBtn svg {
+            fill: var(--text-color);
         }
 
         body {
@@ -140,6 +148,10 @@
 
         .theme-switch-checkbox:checked+.theme-switch-label {
             background-color: var(--primary-color);
+        }
+
+        [data-theme="light"] .theme-switch-checkbox:checked+.theme-switch-label {
+            background-color: var(--text-secondary-color);
         }
 
         .theme-switch-checkbox:checked+.theme-switch-label:before {
@@ -727,13 +739,14 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            display: none;
+            display: flex; /* Add this */
+            justify-content: center; /* Add this */
+            align-items: center; /* Add this */
             width: 40px;
             height: 40px;
             background: var(--primary-color);
             color: white;
-            text-align: center;
-            line-height: 40px;
+            /* Removed text-align and line-height as flexbox handles centering */
             border-radius: 50%;
             z-index: 1000;
             transition: opacity 0.3s;
@@ -833,7 +846,7 @@
             <br />
             <p>Cloud-Native Architect & DevOps Engineer | Azure Specialist | Automation Expert</p>
             <br /> <br />
-            <p><a href="#contact" class="btn">Get in Touch</a></p>
+            <p><a href="#contact" class="btn download-btn">Get in Touch</a></p>
         </div>
     </header>
 
@@ -1184,6 +1197,14 @@
             </div>
         </section>
 
+        <section id="languages" class="section">
+            <h2>Languages</h2>
+            <ul>
+                <li>French - Native proficiency</li>
+                <li>English - Professional working proficiency</li>
+            </ul>
+        </section>
+
         <section id="education" class="section">
             <h2>Education</h2>
             <p><strong>Bachelor in Computer Science | 1998</strong></p>
@@ -1192,7 +1213,7 @@
 
         <section id="certifications" class="section">
             <h2>Certifications</h2>
-            <p><a href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-204">AZ-204:
+            <p><a href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-204" target="_blank">AZ-204:
                     Developing Solutions for Microsoft Azure</a> (2022)</p>
         </section>
 
@@ -1212,8 +1233,8 @@
                 your CI/CD pipelines, I'd love to hear from you!</p>
 
             <div class="contact-actions">
-                <a href="mailto:lionel_schiepers@hotmail.com" class="btn">Email Me Directly</a>
-                <a href="https://www.linkedin.com/in/lionel-schiepers-3a727a156/" target="_blank" class="btn">Connect on
+                <a href="mailto:lionel_schiepers@hotmail.com" class="btn download-btn">Email Me Directly</a>
+                <a href="https://www.linkedin.com/in/lionel-schiepers-3a727a156/" target="_blank" class="btn download-btn">Connect on
                     LinkedIn</a>
                 <a href="CV.pdf" class="btn download-btn" download>Download CV (PDF)</a>
             </div>
@@ -1238,7 +1259,7 @@
                     <label for="message">Message</label>
                     <textarea name="message" id="message" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn">Send Message</button>
+                <button type="submit" class="btn download-btn">Send Message</button>
                 <div id="formStatus" class="form-status"></div>
             </form>
         </section>
