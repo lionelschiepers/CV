@@ -13,9 +13,8 @@ This directory serves as a personal repository, combining professional documents
 
 # Key Files
 
-*   `CV 20251016 - ict.pdf`: A primary curriculum vitae document.
-*   `LandingPage/CV.pdf`: Another CV document, likely specific to the landing page context.
-*   `Badge.jpg`, `LandingPage/Badge.jpg`: Image files, possibly used for branding or display.
+*   `LandingPage/CV.pdf`: A primary curriculum vitae document.
+*   `LandingPage/Badge.jpg`: Profile picture.
 
 # Usage
 
