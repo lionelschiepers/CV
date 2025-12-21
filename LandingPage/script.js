@@ -155,4 +155,39 @@ document.addEventListener("DOMContentLoaded", function () {
             snowContainer.appendChild(snowflake);
         }
     }
+
+    // Rotating quotes
+    const quotes = [
+        "My code doesn't have bugs; it has unexpected features.",
+        "Why do programmers prefer dark mode? Because light attracts bugs!",
+        "I'm not saying I'm lazy, but I once automated a task that took less time to do manually.",
+        "Debugging is like being the detective in a crime movie where you are also the murderer.",
+        "My favorite language is 'coffee' – it compiles every morning.",
+        "Programmer: A machine that turns coffee into code.",
+        "There are 10 types of people in the world: those who understand binary, and those who don't.",
+        "I need to get a new keyboard; my 'any' key is broken.",
+        "Measuring programming progress by lines of code is like measuring aircraft building progress by weight.",
+        "The only thing more frustrating than a bug is a feature that acts like a bug."
+    ];
+
+    const quoteContainer = document.getElementById('quote-container');
+    let quoteIndex = 0;
+
+    function showNextQuote() {
+        if (quoteContainer) {
+            quoteContainer.classList.remove('visible'); // Fade out
+
+            setTimeout(() => {
+                quoteContainer.textContent = quotes[quoteIndex];
+                quoteIndex = (quoteIndex + 1) % quotes.length;
+                quoteContainer.classList.add('visible'); // Fade in
+            }, 500); // Half a second delay to allow fade out
+        }
+    }
+
+    // Initial quote display
+    showNextQuote();
+
+    // Change quote every 10 seconds
+    setInterval(showNextQuote, 10000);
 });
