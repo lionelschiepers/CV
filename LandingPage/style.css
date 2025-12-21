@@ -84,11 +84,11 @@ body {
     gap: 20px;
 }
 
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
+        .social-links {
+            display: flex;
+            gap: 15px;
+            transform: translateY(5px); /* Fine-tune vertical alignment */
+        }
 .social-links a {
     color: var(--light-text);
     transition: color 0.3s ease;
