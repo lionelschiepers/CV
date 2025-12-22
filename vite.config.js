@@ -3,6 +3,7 @@ import { resolve } from 'path';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({
+  base: '/CV/', // Set the base path for GitHub Pages subfolder hosting
   plugins: [
     createHtmlPlugin({
       minify: true,
