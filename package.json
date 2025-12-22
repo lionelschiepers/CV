@@ -7,6 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start": "vite",
     "predeploy": "npm run build",
     "build": "vite build",
     "deploy": "gh-pages -d dist -b gh-pages -m \"Deploy CV to GitHub Pages\"",
