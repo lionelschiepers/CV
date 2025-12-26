@@ -124,9 +124,10 @@ jobs:
             const fs = require('fs');
             const reports = fs.readdirSync('.').filter(f => f.includes('lighthouse-'));
             
-            echo "Found: " + reports.length + " reports";
+            console.log('Found: ' + reports.length + ' reports');
             
             if (reports.length > 0) {
+              console.log('Processing : ' + reports[0]);
               const report = JSON.parse(fs.readFileSync(reports[0], 'utf8'));
               const scores = {
                 performance: Math.round(report.categories.performance.score * 100),
