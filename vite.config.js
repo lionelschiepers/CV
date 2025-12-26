@@ -16,5 +16,6 @@ export default defineConfig({
     rollupOptions: {
       input: resolve(__dirname, 'LandingPage/index.html'),
     },
+    minify: 'terser',
   },
 });
