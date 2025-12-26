@@ -84,9 +84,9 @@ jobs:
       - name: Install Lighthouse CLI
         run: npm install -g @lhci/cli
       - name: Run Lighthouse CI
-        run: lhci autorun --config=./lighthouserc.js --verbose --githubToken=${{ secrets.GITHUB_TOKEN }}
+        run: lhci autorun --config=./lighthouserc.js --verbose
 #        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
       - name: Upload Lighthouse Report
         uses: actions/upload-artifact@v4
         with:
