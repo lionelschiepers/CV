@@ -41,13 +41,6 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-      - name: Performance Budget Check
-        run: |
-          size=$(du -sh ./dist | cut -f1)
-          echo "Build size: $size"
-          if [ $(echo "$size > 1M" | bc -l) -eq 1 ]; then
-            echo "::warning::Build size exceeds 1MB: $size"
-          fi
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
@@ -90,6 +83,13 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Build size check
+        run: |
+          size=$(du -s ./dist | cut -f1)
+          echo "Build size: $size"
+          if [ $(echo "$size > 1000000" | bc -l) -eq 1 ]; then
+            echo "::warning::Build size exceeds 1MB: $size"
+          fi
       - name: Install Lighthouse CLI
         run: npm install -g @lhci/cli
       - name: Run Lighthouse CI
