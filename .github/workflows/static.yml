@@ -124,8 +124,7 @@ jobs:
             const fs = require('fs');
             const reports = fs.readdirSync('.').filter(f => f.includes('lighthouse-'));
             
-            const reportsCount = reports.length;
-            echo "$reportsCount reports found."
+            echo "Found: " + reports.length + " reports";
             
             if (reports.length > 0) {
               const report = JSON.parse(fs.readFileSync(reports[0], 'utf8'));
