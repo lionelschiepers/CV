@@ -122,8 +122,12 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const reports = fs.readdirSync('.').filter(f => f.includes('lighthouse-'));
+            const reports = fs.readdirSync('.').filter(f => f.includes('lhr-') && f.includes('.json'));
+            
+            console.log('Found: ' + reports.length + ' reports');
+            
             if (reports.length > 0) {
+              console.log('Processing : ' + reports[0]);
               const report = JSON.parse(fs.readFileSync(reports[0], 'utf8'));
               const scores = {
                 performance: Math.round(report.categories.performance.score * 100),
