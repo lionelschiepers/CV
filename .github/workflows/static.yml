@@ -1,4 +1,3 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy CV to Pages
 
 on:
@@ -25,7 +24,7 @@ concurrency:
 
 jobs:
   # Build job
-  build:
+  Build:
     permissions:
       contents: read
       pages: write
@@ -51,7 +50,7 @@ jobs:
           path: './dist'
 
   # Deployment job
-  deploy:
+  Deploy:
     permissions:
       contents: read
       pages: write
@@ -61,13 +60,13 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: [build, lighthouse]
+    needs: [Build, Lighthouse]
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
-  lighthouse:
+  Lighthouse:
     permissions:
       contents: read
       pull-requests: write
