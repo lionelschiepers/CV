@@ -4,10 +4,13 @@ name: Deploy CV to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main", "features/**"]
+    branches:
+      - main
+      - 'features/**'
 
   pull_request:
-    branches: ["main"]
+    branches: 
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
