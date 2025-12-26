@@ -95,3 +95,51 @@ jobs:
           name: lighthouse-report
           path: .lighthouseci/
           include-hidden-files: true
+
+  Performance-report:
+    runs-on: ubuntu-latest
+    needs: Deploy
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Download Lighthouse reports
+        uses: actions/download-artifact@v4
+        with:
+          name: lighthouse-report
+          path: ./
+          
+      - name: Comment PR with Lighthouse scores
+        uses: actions/github-script@v7
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            const fs = require('fs');
+            const reports = fs.readdirSync('.').filter(f => f.includes('lighthouse-'));
+            if (reports.length > 0) {
+              const report = JSON.parse(fs.readFileSync(reports[0], 'utf8'));
+              const scores = {
+                performance: Math.round(report.categories.performance.score * 100),
+                accessibility: Math.round(report.categories.accessibility.score * 100),
+                bestPractices: Math.round(report.categories['best-practices'].score * 100),
+                seo: Math.round(report.categories.seo.score * 100)
+              };
+              
+              const comment = `## Lighthouse Performance Report
+              
+              | Category | Score |
+              |----------|-------|
+              | Performance | ${scores.performance}/100 |
+              | Accessibility | ${scores.accessibility}/100 |
+              | Best Practices | ${scores.bestPractices}/100 |
+              | SEO | ${scores.seo}/100 |
+              
+              ${scores.performance >= 90 ? '✅' : '⚠️'} Performance is ${scores.performance >= 90 ? 'excellent' : 'good'}`;
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: comment
+              });
+            }
