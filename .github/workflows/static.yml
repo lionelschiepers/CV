@@ -85,7 +85,7 @@ jobs:
         run: npm run build
       - name: Build size check
         run: |
-          size=$(du -s ./dist | cut -f1)
+          size=$(du -sb ./dist | cut -f1)
           echo "Build size: $size"
           if [ $(echo "$size > 1000000" | bc -l) -eq 1 ]; then
             echo "::warning::Build size exceeds 1MB: $size"
