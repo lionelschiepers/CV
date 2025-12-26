@@ -35,6 +35,7 @@ bld/
 [Ll]ogs/
 
 dist/
+.lighthouseci/
 
 # Build results on 'Bin' directories
 **/[Bb]in/*
