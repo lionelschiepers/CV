@@ -123,6 +123,10 @@ jobs:
           script: |
             const fs = require('fs');
             const reports = fs.readdirSync('.').filter(f => f.includes('lighthouse-'));
+            
+            const reportsCount = reports.length;
+            echo "$reportsCount reports found."
+            
             if (reports.length > 0) {
               const report = JSON.parse(fs.readFileSync(reports[0], 'utf8'));
               const scores = {
