@@ -475,6 +475,10 @@ body {
     border: 1px solid #ff6b6b;
 }
 
+[data-theme="dark"] .form-status.error {
+    color: #ff6b6b;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
