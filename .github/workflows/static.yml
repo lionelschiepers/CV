@@ -46,25 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload the output from the vite build
           path: './dist'
-
-  # Deployment job
-  Deploy:
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    if: github.ref == 'refs/heads/main'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: [Build, Lighthouse]
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
   Lighthouse:
     permissions:
@@ -102,33 +84,20 @@ jobs:
           name: lighthouse-report
           path: .lighthouseci/
           include-hidden-files: true
-
-  Performance-report:
-    runs-on: ubuntu-latest
-    needs: Lighthouse
-    permissions:
-      contents: read
-      pull-requests: write
-    steps:
-      - name: Download Lighthouse reports
-        uses: actions/download-artifact@v4
-        with:
-          name: lighthouse-report
-          path: ./
-          
       - name: Comment PR with Lighthouse scores
         uses: actions/github-script@v7
         if: github.event_name == 'pull_request'
         with:
           script: |
             const fs = require('fs');
-            const reports = fs.readdirSync('.').filter(f => f.includes('lhr-') && f.includes('.json'));
+            const subDir = '.lighthouseci/';
+            const reports = fs.readdirSync(subDir).filter(f => f.includes('lhr-') && f.includes('.json'));
             
             console.log('Found: ' + reports.length + ' reports');
             
             if (reports.length > 0) {
-              console.log('Processing : ' + reports[0]);
-              const report = JSON.parse(fs.readFileSync(reports[0], 'utf8'));
+              console.log('Processing : ' + reports[reports.length - 1]);
+              const report = JSON.parse(fs.readFileSync(subDir + reports[reports.length - 1], 'utf8'));
               const scores = {
                 performance: Math.round(report.categories.performance.score * 100),
                 accessibility: Math.round(report.categories.accessibility.score * 100),
@@ -154,3 +123,20 @@ jobs:
                 body: comment
               });
             }
+
+  Deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: [Build, Lighthouse]
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
