@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({

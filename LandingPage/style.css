@@ -71,6 +71,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     position: relative;
+    animation: slideInDown 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .header-top {
@@ -209,6 +210,7 @@ body {
     opacity: 0;
     transform: translateX(-100%);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    animation: fadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .section.is-visible {
@@ -469,8 +471,12 @@ body {
 
 .form-status.error {
     background-color: rgba(255, 0, 0, 0.1);
-    color: #ff6b6b;
+    color: #C0392B;
     border: 1px solid #ff6b6b;
+}
+
+[data-theme="dark"] .form-status.error {
+    color: #ff6b6b;
 }
 
 /* Animations */
@@ -514,13 +520,9 @@ body {
     }
 }
 
-#main-header {
-    animation: slideInDown 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
 
-.section {
-    animation: fadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
+
+
 
 .job ul li,
 #certifications p {
