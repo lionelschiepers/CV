@@ -836,6 +836,11 @@ footer {
     text-align: right;
 }
 
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
 footer small {
     color: var(--text-secondary-color);
     font-size: 0.8em;
