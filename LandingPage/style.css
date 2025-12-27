@@ -124,16 +124,29 @@ body {
     border-radius: 34px;
 }
 
-.theme-switch-label:before {
+[data-theme="dark"] .theme-switch-label {
+    background-color: #ccc;
+}
+
+[data-theme="light"] .theme-switch-label {
+    background-color: #ccc;
+}
+
+.theme-switch-bullet {
     position: absolute;
-    content: "";
     height: 26px;
     width: 26px;
     left: 4px;
     bottom: 4px;
     background-color: white;
-    transition: .4s;
+    transition: left .4s ease-in-out;
     border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .theme-switch-bullet,
+[data-theme="light"] .theme-switch-bullet {
+    background-color: white;
 }
 
 .theme-switch-checkbox:checked+.theme-switch-label {
@@ -144,8 +157,8 @@ body {
     background-color: var(--text-secondary-color);
 }
 
-.theme-switch-checkbox:checked+.theme-switch-label:before {
-    transform: translateX(26px);
+.theme-switch-checkbox:checked ~ .theme-switch-bullet {
+    left: 30px;
 }
 
 .profile-picture {
@@ -470,8 +483,9 @@ body {
 }
 
 .form-status.error {
+    /* sonarqube complains about contract but doesn't understand the alpha value */ 
     background-color: rgba(255, 0, 0, 0.1);
-    color: #C0392B;
+    color: #ff6b6b;
     border: 1px solid #ff6b6b;
 }
 
