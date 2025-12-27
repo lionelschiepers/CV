@@ -90,13 +90,14 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const reports = fs.readdirSync('.lighthouseci/').filter(f => f.includes('lhr-') && f.includes('.json'));
+            const subDir = '.lighthouseci/';
+            const reports = fs.readdirSync(subDir).filter(f => f.includes('lhr-') && f.includes('.json'));
             
             console.log('Found: ' + reports.length + ' reports');
             
             if (reports.length > 0) {
               console.log('Processing : ' + reports[reports.length - 1]);
-              const report = JSON.parse(fs.readFileSync(reports[reports.length - 1], 'utf8'));
+              const report = JSON.parse(fs.readFileSync(subDir + reports[reports.length - 1], 'utf8'));
               const scores = {
                 performance: Math.round(report.categories.performance.score * 100),
                 accessibility: Math.round(report.categories.accessibility.score * 100),
