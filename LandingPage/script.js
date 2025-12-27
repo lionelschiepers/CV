@@ -5,19 +5,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set initial theme based on saved preference or default to dark
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
-        body.setAttribute('data-theme', savedTheme);
+        body.dataset.theme = savedTheme;
         themeSwitch.checked = savedTheme === 'light';
     } else {
-        body.setAttribute('data-theme', 'dark');
+        body.dataset.theme = 'dark';
         themeSwitch.checked = false;
     }
 
     themeSwitch.addEventListener('change', function () {
         if (this.checked) {
-            body.setAttribute('data-theme', 'light');
+            body.dataset.theme = 'light';
             localStorage.setItem('theme', 'light');
         } else {
-            body.setAttribute('data-theme', 'dark');
+            body.dataset.theme = 'dark';
             localStorage.setItem('theme', 'dark');
         }
     });
