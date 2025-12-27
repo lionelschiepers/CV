@@ -185,9 +185,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Initial quote display
-    showNextQuote();
+    const contactSection = document.getElementById('contact');
+    const quoteObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Initial quote display
+                showNextQuote();
 
-    // Change quote every 10 seconds
-    setInterval(showNextQuote, 10000);
+                // Change quote every 10 seconds
+                setInterval(showNextQuote, 10000);
+
+                quoteObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    if (contactSection) {
+        quoteObserver.observe(contactSection);
+    }
 });

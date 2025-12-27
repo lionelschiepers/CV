@@ -7,6 +7,11 @@ export default defineConfig({
   plugins: [
     createHtmlPlugin({
       minify: true,
+      inject: {
+        data: {
+          buildDate: new Date().toLocaleDateString('fr-BE'),
+        },
+      },
     }),
   ],
   root: 'LandingPage',
