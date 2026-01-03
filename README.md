@@ -85,8 +85,12 @@ You need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/
 ## 🛠️ Built With
 
 - **HTML/CSS/JavaScript** for the interactive web version
+- **Vite** as a fast build tool
+- **GitHub Actions** for CI/CD
+- **GitHub Pages** for seamless deployment
+- **Lighthouse** for performance and accessibility audits
+- **Terser** for minifying JavaScript files
 - **Modern design principles** for accessibility and readability
-- **GitHub Pages** for seamless hosting
 
 ## 📝 License
 
