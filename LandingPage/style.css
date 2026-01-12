@@ -276,6 +276,15 @@ body {
     font-weight: 600;
 }
 
+.job p a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.job p a:hover {
+    text-decoration: underline;
+}
+
 .job p {
     margin: 0 0 10px 0;
     font-size: 0.95em;
