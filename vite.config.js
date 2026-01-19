@@ -4,6 +4,9 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({
   base: './', // Set the base path for GitHub Pages subfolder hosting to use relative paths
+  server: {
+    compress: true,
+  },
   plugins: [
     createHtmlPlugin({
       minify: true,
