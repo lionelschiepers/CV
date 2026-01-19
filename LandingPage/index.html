@@ -36,27 +36,27 @@
     <link rel="preload" href="Badge.webp" as="image" />
     <style>
       @font-face {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: 300;
         font-display: swap;
-        src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8V1s.ttf) format("truetype");
+        src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8V1s.ttf) format('truetype');
       }
 
       @font-face {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrFJA.ttf) format("truetype");
+        src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrFJA.ttf) format('truetype');
       }
 
       @font-face {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: 600;
         font-display: swap;
-        src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V1s.ttf) format("truetype");
+        src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V1s.ttf) format('truetype');
       }
     </style>
     <link rel="stylesheet" href="style.css" />
@@ -95,8 +95,8 @@
           </div>
         </div>
         <picture>
-          <source srcset="Badge.webp" type="image/webp" />
-          <img src="Badge.jpg" alt="Profile" class="profile-picture" />
+          <source srcset="Badge.webp" type="image/webp" fetchpriority="high" />
+          <img src="Badge.jpg" alt="Profile" class="profile-picture" width="150" height="150" fetchpriority="high" />
         </picture>
         <h1>Lionel Schiepers</h1>
         <p class="header-spacing">
