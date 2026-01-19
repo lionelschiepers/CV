@@ -494,8 +494,13 @@ body {
 
 .form-status.success {
   background-color: rgba(74, 144, 226, 0.2);
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  color: #2980b9;
+  border: 1px solid #2980b9;
+}
+
+[data-theme="dark"] .form-status.success {
+  color: #4a90e2;
+  border-color: #4a90e2;
 }
 
 .form-status.error {
@@ -503,10 +508,6 @@ body {
   background-color: rgba(255, 0, 0, 0.1);
   color: #ff6b6b;
   border: 1px solid #ff6b6b;
-}
-
-[data-theme="dark"] .form-status.error {
-  color: #ff6b6b;
 }
 
 /* Animations */
