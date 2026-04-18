@@ -8,7 +8,7 @@ h3 {
   /* Orange */
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --primary-color: #1e2b36;
   /* Darker, inspired by background */
   --secondary-color: #32404d;
@@ -24,7 +24,7 @@ h3 {
   --heading-color: white;
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
   --primary-color: #dcdfe2;
   --secondary-color: #e9ecef;
   --bg-color: #ecf0f1;
@@ -37,16 +37,16 @@ h3 {
   --heading-color: #34495e;
 }
 
-[data-theme="light"] .btn {
+[data-theme='light'] .btn {
   color: var(--text-color);
 }
 
-[data-theme="light"] #backToTopBtn svg {
+[data-theme='light'] #backToTopBtn svg {
   fill: var(--text-color);
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.7;
   margin: 0;
   padding: 0;
@@ -126,11 +126,11 @@ body {
   border-radius: 34px;
 }
 
-[data-theme="dark"] .theme-switch-label {
+[data-theme='dark'] .theme-switch-label {
   background-color: #ccc;
 }
 
-[data-theme="light"] .theme-switch-label {
+[data-theme='light'] .theme-switch-label {
   background-color: #ccc;
 }
 
@@ -146,8 +146,8 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-[data-theme="dark"] .theme-switch-bullet,
-[data-theme="light"] .theme-switch-bullet {
+[data-theme='dark'] .theme-switch-bullet,
+[data-theme='light'] .theme-switch-bullet {
   background-color: white;
 }
 
@@ -155,7 +155,7 @@ body {
   background-color: var(--primary-color);
 }
 
-[data-theme="light"] .theme-switch-checkbox:checked + .theme-switch-label {
+[data-theme='light'] .theme-switch-checkbox:checked + .theme-switch-label {
   background-color: var(--text-secondary-color);
 }
 
@@ -334,7 +334,7 @@ body {
   text-decoration: none;
 }
 
-[data-theme="dark"] .skills-list li a {
+[data-theme='dark'] .skills-list li a {
   color: var(--light-text);
 }
 
@@ -407,7 +407,7 @@ body {
   border: 1px solid var(--border-color);
   background: var(--bg-color);
   color: var(--text-color);
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1em;
 }
 
@@ -498,7 +498,7 @@ body {
   border: 1px solid #2980b9;
 }
 
-[data-theme="dark"] .form-status.success {
+[data-theme='dark'] .form-status.success {
   color: #4a90e2;
   border-color: #4a90e2;
 }
@@ -564,128 +564,9 @@ body {
   --stagger-delay: 100ms;
 }
 
-.job ul li:nth-child(1),
-.skills-list li:nth-child(1) {
-  animation-delay: calc(1 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(2),
-.skills-list li:nth-child(2) {
-  animation-delay: calc(2 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(3),
-.skills-list li:nth-child(3) {
-  animation-delay: calc(3 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(4),
-.skills-list li:nth-child(4) {
-  animation-delay: calc(4 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(5),
-.skills-list li:nth-child(5) {
-  animation-delay: calc(5 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(6),
-.skills-list li:nth-child(6) {
-  animation-delay: calc(6 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(7),
-.skills-list li:nth-child(7) {
-  animation-delay: calc(7 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(8),
-.skills-list li:nth-child(8) {
-  animation-delay: calc(8 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(9),
-.skills-list li:nth-child(9) {
-  animation-delay: calc(9 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(10),
-.skills-list li:nth-child(10) {
-  animation-delay: calc(10 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(11),
-.skills-list li:nth-child(11) {
-  animation-delay: calc(11 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(12),
-.skills-list li:nth-child(12) {
-  animation-delay: calc(12 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(13),
-.skills-list li:nth-child(13) {
-  animation-delay: calc(13 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(14),
-.skills-list li:nth-child(14) {
-  animation-delay: calc(14 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(15),
-.skills-list li:nth-child(15) {
-  animation-delay: calc(15 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(16),
-.skills-list li:nth-child(16) {
-  animation-delay: calc(16 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(17),
-.skills-list li:nth-child(17) {
-  animation-delay: calc(17 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(18),
-.skills-list li:nth-child(18) {
-  animation-delay: calc(18 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(19),
-.skills-list li:nth-child(19) {
-  animation-delay: calc(19 * var(--stagger-delay));
-}
-
-.job ul li:nth-child(20),
-.skills-list li:nth-child(20) {
-  animation-delay: calc(20 * var(--stagger-delay));
-}
-
-.skills-list li:nth-child(21) {
-  animation-delay: calc(21 * var(--stagger-delay));
-}
-
-.skills-list li:nth-child(22) {
-  animation-delay: calc(22 * var(--stagger-delay));
-}
-
-.skills-list li:nth-child(23) {
-  animation-delay: calc(23 * var(--stagger-delay));
-}
-
-.skills-list li:nth-child(24) {
-  animation-delay: calc(24 * var(--stagger-delay));
-}
-
-.skills-list li:nth-child(25) {
-  animation-delay: calc(25 * var(--stagger-delay));
-}
-
-.skills-list li:nth-child(26) {
-  animation-delay: calc(26 * var(--stagger-delay));
+.job ul li,
+.skills-list li {
+  animation-delay: calc(var(--i, 1) * var(--stagger-delay));
 }
 
 /* Snow Effect */

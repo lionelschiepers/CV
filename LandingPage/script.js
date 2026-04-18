@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const jobs = document.querySelectorAll('.job');
 
+  // Set stagger delay index on list items
+  document.querySelectorAll('.job ul, .skills-list').forEach((list) => {
+    Array.from(list.children).forEach((li, i) => {
+      li.style.setProperty('--i', i + 1);
+    });
+  });
+
   const sections = document.querySelectorAll('.section');
 
   const observer = new IntersectionObserver(
@@ -178,6 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const contactSection = document.getElementById('contact');
+  let quoteIntervalId = null;
   const quoteObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -186,7 +194,9 @@ document.addEventListener('DOMContentLoaded', function () {
           showNextQuote();
 
           // Change quote every 10 seconds
-          setInterval(showNextQuote, 10000);
+          if (!quoteIntervalId) {
+            quoteIntervalId = setInterval(showNextQuote, 10000);
+          }
 
           quoteObserver.unobserve(entry.target);
         }
