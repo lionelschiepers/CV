@@ -168,7 +168,10 @@
           <dl class="profile" aria-label="Profile">
             <div>
               <dt>Specialism</dt>
-              <dd>Secure Azure landing zones (hub and spoke), internal developer platforms</dd>
+              <dd>
+                Secure Azure landing zones (hub and spoke), internal developer platforms, cloud-native
+                .NET&nbsp;on&nbsp;Azure
+              </dd>
             </div>
             <div>
               <dt>Works as</dt>
@@ -372,8 +375,9 @@
                 I designed the platform on zero-trust principles: private endpoints, with public network access off or
                 limited to the corporate VPN; managed identities between services and OpenID Connect for deployments
                 instead of passwords; Entra ID role-based access for every user and service; and TLS from the gateway to
-                every backend, with certificate validation. Container images are signed and scanned (cosign, Trivy), and
-                the platform passed an OWASP ASVS Level 2 self-assessment.
+                every backend, with certificate validation. Container images are signed and scanned (cosign, Trivy),
+                Microsoft Defender for Cloud is enabled in Terraform, with its recommendations fixed in code rather than
+                by hand to keep the secure score high, and the platform passed an OWASP ASVS Level 2 self-assessment.
               </li>
             </ul>
           </article>
