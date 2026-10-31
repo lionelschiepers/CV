@@ -90,7 +90,7 @@
     <meta name="color-scheme" content="light dark" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src https://formspree.io; form-action https://formspree.io; img-src 'self' data:;" />
+      content="default-src 'self'; style-src 'self'; font-src 'self'; connect-src https://formspree.io; form-action https://formspree.io; img-src 'self' data:;" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>" />
@@ -99,16 +99,6 @@
     <script src="theme-init.js"></script>
     <link rel="preload" href="fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="Badge.webp" as="image" />
-    <style>
-      @font-face {
-        font-family: 'Archivo';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 100 900;
-        font-stretch: 62% 125%;
-        src: url(fonts/archivo-wdth.woff2) format('woff2');
-      }
-    </style>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -144,7 +134,7 @@
         </a>
       </nav>
       <label class="theme-toggle">
-        <input type="checkbox" id="theme-switch" role="switch" />
+        <input type="checkbox" id="theme-switch" />
         Dark mode
       </label>
     </header>
@@ -215,9 +205,10 @@
         </div>
       </div>
 
-      <figure class="career" id="career" style="--total: 95">
-        <ol class="career-rows" style="--period-s: 39" data-period-label="Freelance since 2022">
-          <li style="--s: 0; --e: 12; --i: 0">
+      <!-- Positions are months since January 2019; script.js applies them (the CSP blocks inline styles). -->
+      <figure class="career" id="career">
+        <ol class="career-rows" data-period-start="39" data-period-label="Freelance since 2022">
+          <li data-start="0" data-end="12">
             <a href="#job-bvd" class="career-row career-row-after career-row-earlier">
               <span class="career-bar"></span>
               <span class="career-label">
@@ -226,7 +217,7 @@
               </span>
             </a>
           </li>
-          <li style="--s: 13; --e: 37; --i: 1">
+          <li data-start="13" data-end="37">
             <a href="#job-ypto" class="career-row career-row-after">
               <span class="career-bar"></span>
               <span class="career-label">
@@ -235,7 +226,7 @@
               </span>
             </a>
           </li>
-          <li style="--s: 37; --e: 39; --i: 2">
+          <li data-start="37" data-end="39">
             <a href="#job-capgemini" class="career-row career-row-after">
               <span class="career-bar"></span>
               <span class="career-label">
@@ -244,7 +235,7 @@
               </span>
             </a>
           </li>
-          <li style="--s: 39; --e: 44; --i: 3">
+          <li data-start="39" data-end="44">
             <a href="#job-aprico" class="career-row career-row-after">
               <span class="career-bar"></span>
               <span class="career-label">
@@ -253,7 +244,7 @@
               </span>
             </a>
           </li>
-          <li style="--s: 44; --e: 51; --i: 4">
+          <li data-start="44" data-end="51">
             <a href="#job-ringring" class="career-row career-row-after">
               <span class="career-bar"></span>
               <span class="career-label">
@@ -262,7 +253,7 @@
               </span>
             </a>
           </li>
-          <li style="--s: 58; --e: 66; --i: 5">
+          <li data-start="58" data-end="66">
             <a href="#job-dieteren" class="career-row">
               <span class="career-bar"></span>
               <span class="career-label">
@@ -271,7 +262,7 @@
               </span>
             </a>
           </li>
-          <li style="--s: 76; --e: 83; --i: 6">
+          <li data-start="76" data-end="83">
             <a href="#job-federale" class="career-row">
               <span class="career-bar"></span>
               <span class="career-label">
@@ -280,7 +271,7 @@
               </span>
             </a>
           </li>
-          <li style="--s: 86; --e: 94; --i: 7" class="career-current" data-ongoing>
+          <li data-start="86" class="career-current" data-ongoing>
             <a href="#job-cegeka" class="career-row" aria-current="true">
               <span class="career-bar"></span>
               <span class="career-label">
@@ -291,14 +282,14 @@
           </li>
         </ol>
         <div class="career-axis" aria-hidden="true">
-          <span style="--s: 0">2019</span>
-          <span style="--s: 12">2020</span>
-          <span style="--s: 24">2021</span>
-          <span style="--s: 36">2022</span>
-          <span style="--s: 48">2023</span>
-          <span style="--s: 60">2024</span>
-          <span style="--s: 72">2025</span>
-          <span style="--s: 84">2026</span>
+          <span data-start="0">2019</span>
+          <span data-start="12">2020</span>
+          <span data-start="24">2021</span>
+          <span data-start="36">2022</span>
+          <span data-start="48">2023</span>
+          <span data-start="60">2024</span>
+          <span data-start="72">2025</span>
+          <span data-start="84">2026</span>
         </div>
         <figcaption>
           My recent career to scale, after 21 years at Bureau van Dijk / Moody's: one bar per employer, then one per
@@ -733,8 +724,8 @@
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" required autocomplete="name" />
+                <label for="contact-name">Name</label>
+                <input type="text" name="name" id="contact-name" required autocomplete="name" />
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
@@ -747,7 +738,7 @@
             </div>
             <div class="form-submit">
               <button type="submit" class="btn btn-primary">Send message</button>
-              <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+              <output id="formStatus" class="form-status" aria-live="polite"></output>
             </div>
           </form>
         </div>

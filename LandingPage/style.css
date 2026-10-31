@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(fonts/archivo-wdth.woff2) format('woff2');
+}
+
 /*
  * Tokens. Light is the reference palette: a cool mineral grey with ink and one cobalt accent.
  * Dark mode uses the same roles, inverted.
@@ -1006,11 +1015,18 @@ a:hover {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
+  /* Every rule that animates or transitions, with the same selector so this later rule wins. */
+  .theme-toggle input,
+  .theme-toggle input::before,
+  .career-rows::before,
+  .career-rows::after,
+  .career-bar,
+  .career-label,
+  .entry:target,
+  .btn,
+  .snowflake {
+    animation: none;
+    transition: none;
   }
 }
 
@@ -1061,6 +1077,7 @@ a:hover {
   }
 
   .hero-contact {
+    flex-direction: column;
     margin: 0;
     color: var(--ink);
   }
@@ -1123,10 +1140,6 @@ a:hover {
     grid-template-columns: 5rem minmax(0, 1fr);
     gap: 0.5rem;
     padding-block: 0.25rem;
-  }
-
-  .hero-contact {
-    flex-direction: column;
   }
 
   .tech-groups {

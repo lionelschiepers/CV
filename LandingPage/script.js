@@ -25,14 +25,21 @@ document.addEventListener('DOMContentLoaded', function () {
     themeSwitch.checked = currentTheme() === 'dark';
   });
 
-  // Career chart: extend the current role to today. Positions are months since January 2019.
+  // Career chart: positions are months since January 2019, kept in data attributes because the CSP blocks inline
+  // styles. The CSSOM isn't affected by the CSP, so they're applied here, and the current role extends to today.
   const career = document.getElementById('career');
   if (career) {
     const now = new Date();
     const monthsToNow = (now.getFullYear() - 2019) * 12 + now.getMonth() + 1;
+    const rows = career.querySelector('.career-rows');
     career.style.setProperty('--total', monthsToNow + 1);
-    career.querySelectorAll('[data-ongoing]').forEach((row) => {
-      row.style.setProperty('--e', monthsToNow);
+    rows.style.setProperty('--period-s', rows.dataset.periodStart);
+    rows.querySelectorAll(':scope > li').forEach((row, i) => {
+      row.style.setProperty('--i', i);
+      row.style.setProperty('--e', 'ongoing' in row.dataset ? monthsToNow : row.dataset.end);
+    });
+    career.querySelectorAll('[data-start]').forEach((el) => {
+      el.style.setProperty('--s', el.dataset.start);
     });
   }
 
@@ -68,48 +75,49 @@ document.addEventListener('DOMContentLoaded', function () {
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      sendMessage();
+    });
+  }
 
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value,
-      };
+  async function sendMessage() {
+    const formData = {
+      name: document.getElementById('contact-name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+    };
 
-      const submitBtn = contactForm.querySelector("button[type='submit']");
-      submitBtn.textContent = 'Sending…';
-      submitBtn.disabled = true;
-      showFormStatus('', '');
+    const submitBtn = contactForm.querySelector("button[type='submit']");
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+    showFormStatus('', '');
 
-      fetch('https://formspree.io/f/mldqvozv', {
+    try {
+      const response = await fetch('https://formspree.io/f/mldqvozv', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
-      })
-        .then((response) => {
-          if (response.ok) {
-            showFormStatus('success', "Message sent. I'll get back to you soon.");
-            contactForm.reset();
-          } else {
-            return response.json().then((data) => {
-              if (Object.hasOwn(data, 'errors')) {
-                showFormStatus('error', data['errors'].map((error) => error['message']).join(', '));
-              } else {
-                showFormStatus('error', sendFailed);
-              }
-            });
-          }
-        })
-        .catch(() => {
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        showFormStatus('success', "Message sent. I'll get back to you soon.");
+      } else {
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          showFormStatus('error', data['errors'].map((error) => error['message']).join(', '));
+        } else {
           showFormStatus('error', sendFailed);
-        })
-        .finally(() => {
-          submitBtn.textContent = 'Send message';
-          submitBtn.disabled = false;
-        });
-    });
+        }
+      }
+    } catch {
+      showFormStatus('error', sendFailed);
+    } finally {
+      submitBtn.textContent = 'Send message';
+      submitBtn.disabled = false;
+    }
   }
 
   function showFormStatus(type, message) {
